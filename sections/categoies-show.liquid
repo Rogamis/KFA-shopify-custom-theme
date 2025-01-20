@@ -1,31 +1,34 @@
-<div class="four-background-images-section">
-  <div class="image-row">
-    <div class="image-item" style="background-image: url('{{ section.settings.image1 | img_url: '2048x2048' }}');">
-      <div class="text-content">
-        <h3>{{ section.settings.text1_heading }}</h3>
-        <p>{{ section.settings.text1_body }}</p>
-      </div>
-    </div>
-    <div class="image-item" style="background-image: url('{{ section.settings.image2 | img_url: '2048x2048' }}');">
-      <div class="text-content">
-        <h3>{{ section.settings.text2_heading }}</h3>
-        <p>{{ section.settings.text2_body }}</p>
-      </div>
-    </div>
-    <div class="image-item" style="background-image: url('{{ section.settings.image3 | img_url: '2048x2048' }}');">
-      <div class="text-content">
-        <h3>{{ section.settings.text3_heading }}</h3>
-        <p>{{ section.settings.text3_body }}</p>
-      </div>
-    </div>
-    <div class="image-item" style="background-image: url('{{ section.settings.image4 | img_url: '2048x2048' }}');">
-      <div class="text-content">
-        <h3>{{ section.settings.text4_heading }}</h3>
-        <p>{{ section.settings.text4_body }}</p>
-      </div>
-    </div>
-  </div>
-</div>
+
+         <div class="container">
+        <div class="four-background-images-section">
+        <div class="image-row">
+            <div class="image-item" style="background-image: url('{{ section.settings.image1 | img_url: '2048x2048' }}');">
+            <div class="text-content">
+                <h3>{{ section.settings.text1_heading }}</h3>
+                <p>{{ section.settings.text1_body }}</p>
+            </div>
+            </div>
+            <div class="image-item" style="background-image: url('{{ section.settings.image2 | img_url: '2048x2048' }}');">
+            <div class="text-content">
+                <h3>{{ section.settings.text2_heading }}</h3>
+                <p>{{ section.settings.text2_body }}</p>
+            </div>
+            </div>
+            <div class="image-item" style="background-image: url('{{ section.settings.image3 | img_url: '2048x2048' }}');">
+            <div class="text-content">
+                <h3>{{ section.settings.text3_heading }}</h3>
+                <p>{{ section.settings.text3_body }}</p>
+            </div>
+            </div>
+            <div class="image-item" style="background-image: url('{{ section.settings.image4 | img_url: '2048x2048' }}');">
+            <div class="text-content">
+                <h3>{{ section.settings.text4_heading }}</h3>
+                <p>{{ section.settings.text4_body }}</p>
+            </div>
+            </div>
+            </div>
+        </div>
+        </div>
 
 {% schema %}
 {

@@ -122,8 +122,9 @@ a {
   overflow-wrap: anywhere; 
   white-space: normal; 
     font-weight: 900;
-    color: white;
-}
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); 
+  color: white;
+  }
 
 .image-item {
     filter: grayscale(100%);
@@ -135,9 +136,5 @@ a {
     filter: grayscale(0%);
     transition: filter 0.3s ease-in-out;
     padding: 20px;
-    color: #EDD146;
-}
-
-.text-content p {
-  display: none;
+    
 }
