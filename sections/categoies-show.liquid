@@ -1,0 +1,99 @@
+<div class="four-images-section">
+  <div class="image-row">
+    <div class="image-item">
+      <img src="{{ section.settings.image1 | img_url: '1024x1024' }}" alt="{{ section.settings.alt1 | escape }}">
+    </div>
+    <div class="image-item">
+      <img src="{{ section.settings.image2 | img_url: '1024x1024' }}" alt="{{ section.settings.alt2 | escape }}">
+    </div>
+    <div class="image-item">
+      <img src="{{ section.settings.image3 | img_url: '1024x1024' }}" alt="{{ section.settings.alt3 | escape }}">
+    </div>
+    <div class="image-item">
+      <img src="{{ section.settings.image4 | img_url: '1024x1024' }}" alt="{{ section.settings.alt4 | escape }}">
+    </div>
+  </div>
+</div>
+
+<style>
+.four-images-section {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.image-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.image-item {
+  flex: 1 1 calc(25% - 20px);
+  box-sizing: border-box;
+}
+
+.image-item img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+</style>
+
+{% schema %}
+{
+  "name": "Four Images Block",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image1",
+      "label": "Image 1"
+    },
+    {
+      "type": "text",
+      "id": "alt1",
+      "label": "Alt Text for Image 1",
+      "default": "First Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image2",
+      "label": "Image 2"
+    },
+    {
+      "type": "text",
+      "id": "alt2",
+      "label": "Alt Text for Image 2",
+      "default": "Second Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image3",
+      "label": "Image 3"
+    },
+    {
+      "type": "text",
+      "id": "alt3",
+      "label": "Alt Text for Image 3",
+      "default": "Third Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image4",
+      "label": "Image 4"
+    },
+    {
+      "type": "text",
+      "id": "alt4",
+      "label": "Alt Text for Image 4",
+      "default": "Fourth Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Four Images Block",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
