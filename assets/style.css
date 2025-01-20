@@ -44,3 +44,17 @@ a {
     padding: 2px 7px;
     border-radius: 20px;
 }
+
+
+
+
+.hero-section {
+    display: flex;
+    align-items: center;
+    height: 90vh;
+    justify-content: space-between;
+}
+
+.hero-section div {
+    width: 50%;
+}
