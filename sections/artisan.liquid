@@ -1,6 +1,6 @@
 <div class="artisan-collection">
   <div class="artisan-grid">
-    {% assign artisan_products = collections['artisan'].products %}
+    {% assign artisan_products = collections[section.settings.collection].products %}
     {% for product in artisan_products %}
       <div class="artisan-item">
         <div class="artisan-image">
@@ -85,3 +85,22 @@
   color: #000;
 }
 </style>
+
+{% schema %}
+{
+  "name": "Artisan Collection",
+  "settings": [
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Select a Collection"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Artisan Collection",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
