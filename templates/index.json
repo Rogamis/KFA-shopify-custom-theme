@@ -1,4 +1,12 @@
-
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero": {
@@ -11,9 +19,27 @@
         "hero_button_link": "",
         "class": "hero-section"
       }
+    },
+    "categoies_show_cr9x8R": {
+      "type": "categoies-show",
+      "settings": {
+        "image1": "shopify://shop_images/images.jpg",
+        "text1_heading": "ASSETS",
+        "text1_body": "",
+        "image2": "shopify://shop_images/Max_Ultimate_Sampler_kit_2.jpg",
+        "text2_heading": "SWITCH",
+        "text2_body": "Add your text here for block 2.",
+        "image3": "shopify://shop_images/b6c993ee4f0fa6e1c807585173854558.jpg",
+        "text3_heading": "EPOXYKEYCAPS",
+        "text3_body": "Add your text here for block 3.",
+        "image4": "shopify://shop_images/Full_metal_keys_by_awekeys_layout.jpg",
+        "text4_heading": "METALKEYCAPS",
+        "text4_body": "Add your text here for block 4."
+      }
     }
   },
   "order": [
-    "hero"
+    "hero",
+    "categoies_show_cr9x8R"
   ]
 }
