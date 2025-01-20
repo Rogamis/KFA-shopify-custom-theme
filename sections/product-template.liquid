@@ -1,0 +1,165 @@
+<div class="container">
+    <div class="product-detail-page">
+    <div class="product-detail-container">
+        <div class="product-gallery">
+        {% for image in product.images %}
+            <div class="gallery-thumbnail">
+            <img src="{{ image.src | img_url: '520x785' }}" alt="{{ product.title }}">
+            </div>
+        {% endfor %}
+        </div>
+
+        <div class="product-info">
+        <div class="breadcrumbs">
+            <a href="/">Shop</a> > <a href="/collections/{{ product.collections.first.handle }}">{{ product.collections.first.title }}</a> > {{ product.title }}
+        </div>
+
+        <h1 class="product-title">{{ product.title }}</h1>
+
+        <div class="product-reviews">
+            <span class="stars">⭐ ⭐ ⭐ ⭐ ⭐</span>
+            <span class="rating">{{ product.rating | default: "4.5" }}</span>
+            <a href="#reviews" class="comments">(120 comments)</a>
+        </div>
+
+        <div class="product-options">
+            <p>Select Size</p>
+            <div class="sizes">
+            {% for variant in product.variants %}
+                <button class="size-button">{{ variant.option1 }}</button>
+            {% endfor %}
+            </div>
+        </div>
+
+        
+
+        <div class="add-to-cart">
+            <button class="add-to-cart-button">Add to Cart</button>
+            <span class="product-price">{{ product.price | money }}</span>
+        </div>
+
+        <div class="product-highlights">
+            <p>✅ Secure Payment</p>
+            <p>✅ Free Shipping</p>
+            <p>✅ Size & Fit Guide</p>
+            <p>✅ Free Returns</p>
+        </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+<style>
+.product-detail-page {
+  display: flex;
+  gap: 20px;
+}
+
+.product-detail-container {
+    width: 100%;
+    display: flex;
+    gap: 75px;
+}
+.product-highlights {
+    display: flex
+;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+
+.product-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.gallery-thumbnail img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+
+
+.breadcrumbs {
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 10px;
+}
+
+.product-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.product-reviews {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.product-options p, .product-colors p {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.sizes .size-button {
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  margin-right: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.sizes .size-button:hover {
+  background-color: #007aff;
+  color: white;
+}
+
+.colors {
+  display: flex;
+  gap: 10px;
+}
+
+.color {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+}
+
+.add-to-cart {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.add-to-cart-button {
+  padding: 10px 20px;
+  background-color: #007aff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.add-to-cart-button:hover {
+  background-color: #005bb5;
+}
+
+.product-price {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.product-highlights {
+  margin-top: 30px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+</style>
