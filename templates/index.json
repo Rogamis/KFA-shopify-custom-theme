@@ -40,7 +40,7 @@
     "artisan_PkWwbX": {
       "type": "artisan",
       "settings": {
-        "collection": ""
+        "collection": "artisan"
       }
     }
   },
