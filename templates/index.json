@@ -1,9 +1,27 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero": {
       "type": "hero",
-      "settings": {}
+      "settings": {
+        "hero_image": "shopify://shop_images/Group_17410_1.png",
+        "hero_heading": "ТВІЙ ОНЛАЙНМАГАЗИН КЕЙКАПІВ",
+        "hero_subheading": "Ми допоможимо тобі обрати твій ідеальний світч, кейкап або іншу переферію до клавіатури, щоб зробити відчуття від гри- незабутними!",
+        "hero_button_text": "",
+        "hero_button_link": "",
+        "class": "hero-section"
+      }
     }
   },
-  "order": ["hero"]
+  "order": [
+    "hero"
+  ]
 }
