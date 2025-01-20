@@ -1,24 +1,36 @@
-<div class="four-images-section">
+<div class="four-background-images-section">
   <div class="image-row">
-    <div class="image-item">
-      <img src="{{ section.settings.image1 | img_url: '1024x1024' }}" alt="{{ section.settings.alt1 | escape }}">
+    <div class="image-item" style="background-image: url('{{ section.settings.image1 | img_url: '2048x2048' }}');">
+      <div class="text-content">
+        <h3>{{ section.settings.text1_heading }}</h3>
+        <p>{{ section.settings.text1_body }}</p>
+      </div>
     </div>
-    <div class="image-item">
-      <img src="{{ section.settings.image2 | img_url: '1024x1024' }}" alt="{{ section.settings.alt2 | escape }}">
+    <div class="image-item" style="background-image: url('{{ section.settings.image2 | img_url: '2048x2048' }}');">
+      <div class="text-content">
+        <h3>{{ section.settings.text2_heading }}</h3>
+        <p>{{ section.settings.text2_body }}</p>
+      </div>
     </div>
-    <div class="image-item">
-      <img src="{{ section.settings.image3 | img_url: '1024x1024' }}" alt="{{ section.settings.alt3 | escape }}">
+    <div class="image-item" style="background-image: url('{{ section.settings.image3 | img_url: '2048x2048' }}');">
+      <div class="text-content">
+        <h3>{{ section.settings.text3_heading }}</h3>
+        <p>{{ section.settings.text3_body }}</p>
+      </div>
     </div>
-    <div class="image-item">
-      <img src="{{ section.settings.image4 | img_url: '1024x1024' }}" alt="{{ section.settings.alt4 | escape }}">
+    <div class="image-item" style="background-image: url('{{ section.settings.image4 | img_url: '2048x2048' }}');">
+      <div class="text-content">
+        <h3>{{ section.settings.text4_heading }}</h3>
+        <p>{{ section.settings.text4_body }}</p>
+      </div>
     </div>
   </div>
 </div>
 
 <style>
-.four-images-section {
+.four-background-images-section {
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
   gap: 20px;
 }
 
@@ -30,68 +42,110 @@
 
 .image-item {
   flex: 1 1 calc(25% - 20px);
-  box-sizing: border-box;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
 }
 
-.image-item img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
+.text-content {
+  background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон для текста */
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.text-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.text-content p {
+  font-size: 1rem;
+  margin: 0;
 }
 </style>
 
 {% schema %}
 {
-  "name": "Four Images Block",
+  "name": "Four Blocks",
   "settings": [
     {
       "type": "image_picker",
       "id": "image1",
-      "label": "Image 1"
+      "label": "Background Image 1"
     },
     {
       "type": "text",
-      "id": "alt1",
-      "label": "Alt Text for Image 1",
-      "default": "First Image"
+      "id": "text1_heading",
+      "label": "Heading for Block 1",
+      "default": "Heading 1"
+    },
+    {
+      "type": "textarea",
+      "id": "text1_body",
+      "label": "Text for Block 1",
+      "default": "Add your text here for block 1."
     },
     {
       "type": "image_picker",
       "id": "image2",
-      "label": "Image 2"
+      "label": "Background Image 2"
     },
     {
       "type": "text",
-      "id": "alt2",
-      "label": "Alt Text for Image 2",
-      "default": "Second Image"
+      "id": "text2_heading",
+      "label": "Heading for Block 2",
+      "default": "Heading 2"
+    },
+    {
+      "type": "textarea",
+      "id": "text2_body",
+      "label": "Text for Block 2",
+      "default": "Add your text here for block 2."
     },
     {
       "type": "image_picker",
       "id": "image3",
-      "label": "Image 3"
+      "label": "Background Image 3"
     },
     {
       "type": "text",
-      "id": "alt3",
-      "label": "Alt Text for Image 3",
-      "default": "Third Image"
+      "id": "text3_heading",
+      "label": "Heading for Block 3",
+      "default": "Heading 3"
+    },
+    {
+      "type": "textarea",
+      "id": "text3_body",
+      "label": "Text for Block 3",
+      "default": "Add your text here for block 3."
     },
     {
       "type": "image_picker",
       "id": "image4",
-      "label": "Image 4"
+      "label": "Background Image 4"
     },
     {
       "type": "text",
-      "id": "alt4",
-      "label": "Alt Text for Image 4",
-      "default": "Fourth Image"
+      "id": "text4_heading",
+      "label": "Heading for Block 4",
+      "default": "Heading 4"
+    },
+    {
+      "type": "textarea",
+      "id": "text4_body",
+      "label": "Text for Block 4",
+      "default": "Add your text here for block 4."
     }
   ],
   "presets": [
     {
-      "name": "Four Images Block",
+      "name": "Four Background Images with Text",
       "category": "Custom"
     }
   ]
