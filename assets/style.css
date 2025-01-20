@@ -71,3 +71,11 @@ a {
     font-size: 20px;
     font-weight: 400;
 }
+
+.hero-section {
+    display: flex
+;
+    align-items: center;
+    height: 75vh;
+    justify-content: space-between;
+}
