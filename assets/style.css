@@ -1,0 +1,46 @@
+.main-menu {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+ul.main-menu {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    list-style: none;
+}
+
+ul.main-menu li a {
+    color: #000000;
+    text-decoration: unset;
+}
+
+a {
+    color: #000000;
+    text-decoration: unset;
+}
+
+.cart-account a {
+    display: flex;
+    align-items: flex-start;
+}
+.cart-account {
+    display: flex;
+    gap: 20px;
+    flex-direction: row;
+}
+
+.cart-account span {
+    margin-left: -11px;
+    background: red;
+    color: white;
+    padding: 2px 7px;
+    border-radius: 20px;
+}

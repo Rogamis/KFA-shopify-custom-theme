@@ -9,18 +9,7 @@
   "market": [],
   "order": [],
   "page": [],
-  "product": [
-    {
-      "key": "extra_fields",
-      "namespace": "custom",
-      "name": "Extra fields",
-      "description": "",
-      "type": {
-        "name": "multi_line_text_field",
-        "category": "TEXT"
-      }
-    }
-  ],
+  "product": [],
   "variant": [],
   "shop": []
 }

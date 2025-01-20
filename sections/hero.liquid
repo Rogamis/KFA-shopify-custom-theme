@@ -1,4 +1,5 @@
 <section class="{{ section.settings.class }}">
+
   <div class="hero-container">
     {% if section.settings.hero_image %}
       <img src="{{ section.settings.hero_image | file_url }}" alt="{{ section.settings.hero_heading }}">
@@ -15,6 +16,7 @@
       </a>
     {% endif %}
   </div>
+  
 </section>
 
 {% schema %}
