@@ -1,30 +1,51 @@
-
-
+<section class="{{ section.settings.class }}">
+  <div class="hero-container">
+    {% if section.settings.hero_image %}
+      <img src="{{ section.settings.hero_image | file_url }}" alt="Hero Image">
+    {% endif %}
+    {% if section.settings.hero_heading %}
+      <h1>{{ section.settings.hero_heading }}</h1>
+    {% endif %}
+    {% if section.settings.hero_subheading %}
+      <p>{{ section.settings.hero_subheading }}</p>
+    {% endif %}
+    {% if section.settings.hero_button_text and section.settings.hero_button_link %}
+      <a href="{{ section.settings.hero_button_link }}" class="hero-button">
+        {{ section.settings.hero_button_text }}
+      </a>
+    {% endif %}
+  </div>
+</section>
 
 {% schema %}
+{
+  "name": "Hero Section",
+  "settings": [
     {
-    "name": "Hero Section",
-    "class": "hero-section",
-    "settings": [{
-        "name": "Hero Image",
-        "id": "hero_image",
-        "type": "image_picker"
-    }, {
-        "name": "Hero Heading",
-        "id": "hero_heading",
-        "type": "text"
-    }, {
-        "name": "Hero Subheading",
-        "id": "hero_subheading",
-        "type": "text"
-    }, {
-        "name": "Hero Button Text",
-        "id": "hero_button_text",
-        "type": "text"
-    }, {
-        "name": "Hero Button Link",
-        "id": "hero_button_link",
-        "type": "url"
-    }]
+      "id": "hero_image",
+      "type": "image_picker",
+      "label": "Hero Image"
+    },
+    {
+      "id": "hero_heading",
+      "type": "text",
+      "label": "Hero Heading"
+    },
+    {
+      "id": "hero_subheading",
+      "type": "text",
+      "label": "Hero Subheading"
+    },
+    {
+      "id": "hero_button_text",
+      "type": "text",
+      "label": "Button Text"
+    },
+    {
+      "id": "hero_button_link",
+      "type": "url",
+      "label": "Button Link"
     }
+  ]
+}
 {% endschema %}
