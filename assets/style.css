@@ -55,6 +55,13 @@ a {
     justify-content: space-between;
 }
 
+.hero-section div h1 {
+    font-family: Raleway;
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 49.39px;
+}
+
 .hero-section div {
     width: 42%;
 }
@@ -73,9 +80,64 @@ a {
 }
 
 .hero-section {
-    display: flex
-;
+    display: flex;
     align-items: center;
     height: 75vh;
     justify-content: space-between;
+}
+
+
+
+
+
+.image-row {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.image-item {
+    width: 25%;
+    display: flex;
+    height: 250px;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+}
+
+.text-content {
+    display: flex
+;
+    flex-direction: column;
+    align-items: center;
+}
+
+.text-content h3 {
+  text-align: center;
+    font-size: 42px;
+     word-wrap: break-word;
+  overflow-wrap: anywhere; 
+  white-space: normal; 
+    font-weight: 900;
+    color: white;
+}
+
+.image-item {
+    filter: grayscale(100%);
+    transition: filter 0.3s ease-in-out;
+    padding: 20px;
+}
+
+.image-item:hover {
+    filter: grayscale(0%);
+    transition: filter 0.3s ease-in-out;
+    padding: 20px;
+    color: #EDD146;
+}
+
+.text-content p {
+  display: none;
 }
