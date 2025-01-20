@@ -5,6 +5,10 @@
   box-sizing: border-box;
 }
 
+a:hover{
+  color:#EDD146;
+  transition: 0.3s;
+}
 
 h1, h2, h3, h4, h5, h6, p, li, a {
   font-family: 'Raleway', sans-serif;
@@ -14,6 +18,9 @@ h1, h2, h3, h4, h5, h6, p, li{
   color: #403928;
 }
     
+.stndr-padding {
+  padding: 120px 0;
+}
 
 
 section .content {
