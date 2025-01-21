@@ -1,13 +1,12 @@
 {
   "sections": {
     "main": {
-      "type": "main-collection",
-      "settings": {}
-    },
-    "filters": {
-      "type": "collection-filters",
-      "settings": {}
+      "type": "collection",
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
-  "order": ["main", "filters"]
+  "order": ["main"]
 }

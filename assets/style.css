@@ -701,6 +701,16 @@ form.item-quantity-form button {
   display: none !important;
 }
 
+button.remove-button {
+    margin: 0px;
+    padding: 0px;
+}
+
+button.remove-button:hover {
+    background-color: white;
+    color: red
+}
+
 ul.product-features li {
     padding: 10px;
     border: 1px solid #f0f0f0;

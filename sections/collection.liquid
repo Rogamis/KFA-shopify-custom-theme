@@ -1,133 +1,189 @@
-<div class="catalog-container">
-    <!-- Блок с фильтрами -->
-    <aside class="catalog-filters">
-        <h3>Filters</h3>
-        <form method="get" action="">
-            <!-- Фильтр по тегам -->
-            <div class="filter-group">
-                <h4>Tags</h4>
-                {% for tag in collection.all_tags %}
+<style>
+div#product-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 20px;
+}
+.product-item {
+    width: 31%;
+}
+.filter-for-all-products div {
+    border-bottom: 1px solid;
+    padding: 20px;
+}
+.catalog-container {
+    padding-top: 60px;
+    gap: 120px;
+    display: flex;
+}
+.filter-for-all-products {
+    width: 25%;
+    border: 1px solid;
+}
+.catalog-products {
+    width: 70%;
+}
+.filter-group h4 {
+    margin: 0px;
+}
+.filter-for-all-products div {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    flex-direction: column;
+}
+aside.filter-for-all-products button {
+    width: 100%;
+}
+</style>
+
+<div class='container'>
+    <div class="catalog-container">
+        <aside class="filter-for-all-products">
+            <div>
+                <h2>Filters</h2>
+            </div>
+            <form method="get" action="">
+                <div class="filter-group">
+                    <h4>Categories</h4>
+                    {% for tag in collection.all_tags %}
+                        <label>
+                            <input 
+                                type="checkbox" 
+                                name="tag[]" 
+                                value="{{ tag }}" 
+                                {% if request.params.tag and request.params.tag contains tag %}checked{% endif %}>
+                            {{ tag }}
+                        </label>
+                    {% endfor %}
+                </div>
+
+                <div class="filter-group">
+                    <h4>Price</h4>
+                    <label>
+                        <input 
+                            type="radio" 
+                            name="price" 
+                            value="low" 
+                            {% if request.params.price == 'low' %}checked{% endif %}>
+                        Under $50
+                    </label>
+                    <label>
+                        <input 
+                            type="radio" 
+                            name="price" 
+                            value="mid" 
+                            {% if request.params.price == 'mid' %}checked{% endif %}>
+                        $50 - $100
+                    </label>
+                    <label>
+                        <input 
+                            type="radio" 
+                            name="price" 
+                            value="high" 
+                            {% if request.params.price == 'high' %}checked{% endif %}>
+                        Over $100
+                    </label>
+                </div>
+
+                <div class="filter-group">
+                    <h4>Brand</h4>
+                    {% assign vendors = collection.products | map: 'vendor' | uniq %}
+                    {% for vendor in vendors %}
+                        <label>
+                            <input 
+                                type="checkbox" 
+                                name="vendor[]" 
+                                value="{{ vendor }}" 
+                                {% if request.params.vendor and request.params.vendor contains vendor %}checked{% endif %}>
+                            {{ vendor }}
+                        </label>
+                    {% endfor %}
+                </div>
+
+                <div class="filter-group">
+                    <h4>Product Type</h4>
+                    {% assign product_types = collection.products | map: 'type' | uniq %}
+                    {% for type in product_types %}
+                        <label>
+                            <input 
+                                type="checkbox" 
+                                name="type[]" 
+                                value="{{ type }}" 
+                                {% if request.params.type and request.params.type contains type %}checked{% endif %}>
+                            {{ type }}
+                        </label>
+                    {% endfor %}
+                </div>
+
+                <div class="filter-group">
+                    <h4>Availability</h4>
                     <label>
                         <input 
                             type="checkbox" 
-                            name="tag[]" 
-                            value="{{ tag }}" 
-                            {% if request.params.tag and request.params.tag contains tag %}checked{% endif %}>
-                        {{ tag }}
+                            name="availability" 
+                            value="in_stock" 
+                            {% if request.params.availability == 'in_stock' %}checked{% endif %}>
+                        In Stock
                     </label>
+                    <label>
+                        <input 
+                            type="checkbox" 
+                            name="availability" 
+                            value="out_of_stock" 
+                            {% if request.params.availability == 'out_of_stock' %}checked{% endif %}>
+                        Out of Stock
+                    </label>
+                </div>
+
+                <button type="submit">Apply Filters</button>
+            </form>
+        </aside>
+
+        <div class="catalog-products">
+            {% assign filtered_products = collection.products %}
+
+            {% if request.params.tag %}
+                {% assign filtered_products = filtered_products | where: "tags", request.params.tag %}
+            {% endif %}
+
+            {% if request.params.price == 'low' %}
+                {% assign filtered_products = filtered_products | where: "price", "<", 50 %}
+            {% elsif request.params.price == 'mid' %}
+                {% assign filtered_products = filtered_products | where: "price", ">=", 50 | where: "price", "<=", 100 %}
+            {% elsif request.params.price == 'high' %}
+                {% assign filtered_products = filtered_products | where: "price", ">", 100 %}
+            {% endif %}
+
+            {% if request.params.vendor %}
+                {% assign filtered_products = filtered_products | where: "vendor", request.params.vendor %}
+            {% endif %}
+
+            {% if request.params.type %}
+                {% assign filtered_products = filtered_products | where: "type", request.params.type %}
+            {% endif %}
+
+            {% if request.params.availability == 'in_stock' %}
+                {% assign filtered_products = filtered_products | where: "available", true %}
+            {% elsif request.params.availability == 'out_of_stock' %}
+                {% assign filtered_products = filtered_products | where: "available", false %}
+            {% endif %}
+
+            <div id="product-list">
+                {% for product in filtered_products %}
+                    <div class="product-item">
+                        <a href="{{ product.url }}">
+                            <img src="{{ product.featured_image | img_url: '300x300' }}" alt="{{ product.title }}">
+                            <h3>{{ product.title }}</h3>
+                            <p>{{ product.price | money }}</p>
+                        </a>
+                    </div>
+                {% else %}
+                    <p>No products found matching the filters.</p>
                 {% endfor %}
             </div>
-
-            <!-- Фильтр по цене -->
-            <div class="filter-group">
-                <h4>Price</h4>
-                <label>
-                    <input 
-                        type="radio" 
-                        name="price" 
-                        value="low" 
-                        {% if request.params.price == 'low' %}checked{% endif %}>
-                    Under $50
-                </label>
-                <label>
-                    <input 
-                        type="radio" 
-                        name="price" 
-                        value="mid" 
-                        {% if request.params.price == 'mid' %}checked{% endif %}>
-                    $50 - $100
-                </label>
-                <label>
-                    <input 
-                        type="radio" 
-                        name="price" 
-                        value="high" 
-                        {% if request.params.price == 'high' %}checked{% endif %}>
-                    Over $100
-                </label>
-            </div>
-
-            <!-- Кнопка применения фильтров -->
-            <button type="submit">Apply Filters</button>
-        </form>
-    </aside>
-
-    <!-- Список продуктов -->
-    <div class="catalog-products">
-        {% assign filtered_products = collection.products %}
-
-        <!-- Фильтрация по тегам -->
-        {% if request.params.tag %}
-            {% assign filtered_products = filtered_products | where: "tags", request.params.tag %}
-        {% endif %}
-
-        <!-- Фильтрация по цене -->
-        {% if request.params.price == 'low' %}
-            {% assign filtered_products = filtered_products | where: "price", "<", 50 %}
-        {% elsif request.params.price == 'mid' %}
-            {% assign filtered_products = filtered_products | where: "price", ">=", 50 | where: "price", "<=", 100 %}
-        {% elsif request.params.price == 'high' %}
-            {% assign filtered_products = filtered_products | where: "price", ">", 100 %}
-        {% endif %}
-
-        <!-- Отображение продуктов -->
-        <div id="product-list">
-            {% for product in filtered_products %}
-                <div class="product-item">
-                    <a href="{{ product.url }}">
-                        <img src="{{ product.featured_image | img_url: '300x300' }}" alt="{{ product.title }}">
-                        <h3>{{ product.title }}</h3>
-                        <p>{{ product.price | money }}</p>
-                    </a>
-                </div>
-            {% else %}
-                <p>No products found matching the filters.</p>
-            {% endfor %}
         </div>
     </div>
 </div>
-
-<style>
-.catalog-container {
-    display: flex;
-    gap: 20px;
-}
-
-.catalog-filters {
-    width: 25%;
-    border-right: 1px solid #ddd;
-    padding-right: 20px;
-}
-
-.catalog-products {
-    width: 75%;
-}
-
-.product-item {
-    display: inline-block;
-    width: 30%;
-    margin: 10px;
-    text-align: center;
-}
-
-.product-item img {
-    max-width: 100%;
-    height: auto;
-}
-
-.filter-group {
-    margin-bottom: 20px;
-}
-
-button {
-    padding: 10px 15px;
-    background-color: #333;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #555;
-}
-</style>
