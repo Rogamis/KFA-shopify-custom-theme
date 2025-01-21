@@ -331,6 +331,8 @@ a {
 
 
 
+
+
 .two-background-images-section .image-item {
     width: 50%;
     height: 450px;
@@ -340,4 +342,76 @@ a {
 .two-background-images-section .image-item h3 {
     font-size: 96px;
     text-transform: uppercase;
+}
+
+
+
+
+
+
+
+.blocks-withouf-space-section .image-item {
+    width: 50%;
+    height: 550px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 20px 0px 0px 20px;
+}
+
+.blocks-withouf-space-section .image-item:nth-child(2) {
+
+    border-radius: 0px 20px 20px 0px;
+}
+
+.blocks-withouf-space-section .text-content a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.blocks-withouf-space-section .image-row {
+    gap: 0px;
+}
+
+.blocks-withouf-space-section .image-item:hover {
+    transform: translatey(0px);
+    transition: 0.3s;
+}
+
+.blocks-withouf-space-section .image-item {
+    padding: 60px;
+}
+
+.blocks-withouf-space-section h3 {
+    text-transform: uppercase;
+    font-size: 48px;
+    padding: 0px;
+    margin: 0px;
+}
+
+.blocks-withouf-space-section p {
+    font-size: 36px;
+    font-weight: 400;
+    color: white;
+    width: 80%;
+    text-align: center;
+}
+
+.blocks-withouf-space-section .text-content div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.blocks-withouf-space-section .text-content img {
+    padding-top: 60px;
+    width: 220px;
+}
+
+.blocks-withouf-space-section {
+    padding-top: 120px;
+
 }
