@@ -601,3 +601,130 @@ form.item-quantity-form button {
     color: white;
     padding-top: 10px;
 }
+
+   .product-page {
+    display: flex;
+    gap: 75px;
+    padding-top: 75px;
+}
+
+    .product-title {
+        font-size: 65;
+        font-weight: 400;
+        margin: 0px;
+    }
+
+    .product-options {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    }
+
+
+
+    .gallery-thumbnails img {
+        width: 50px;
+        margin-bottom: 10px;
+    }
+
+    .gallery-main img {
+        width: 100%;
+    }
+
+    .product-details {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+}
+
+    .breadcrumb a {
+        color: #555;
+        text-decoration: none;
+    }
+
+    .product-rating .stars {
+        color: gold;
+    }
+
+    .product-options label {
+        font-weight: bold;
+    }
+
+    .sizes label,
+    .colors label {
+        display: inline-block;
+        margin-right: 10px;
+    }
+
+    .colors label {
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+        border: 1px solid #ddd;
+        border-radius: 50%;
+    }
+
+    .product-price {
+        margin-top: 20px;
+           font-size: 36px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    .product-features {
+        list-style: none;
+        padding: 0;
+        margin-top: 20px;
+    }
+
+    .product-features li {
+        margin-bottom: 10px;
+    }
+
+    ul.product-features {
+    padding-top: 50px;
+    border-top: 1px solid black;
+}
+
+.product-price div {
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+.product-price div button {
+    margin: 0px;
+}
+
+
+.hiden {
+  display: none !important;
+}
+
+
+ul.product-features li {
+    padding: 10px;
+    border: 1px solid #f0f0f0;
+    border-radius: 5px;
+    width: 46%;
+}
+
+ul.product-features {
+    display: flex;
+    margin: 0px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.gallery-main img {
+    border-radius: 10px;
+}
+
+.product-details .product-price div {
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    flex-direction: row;
+    justify-content: flex-start;
+}

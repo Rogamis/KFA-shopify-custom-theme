@@ -1,151 +1,68 @@
-    <style>
-   .product-page {
-    display: flex;
-    gap: 75px;
-    padding-top: 75px;
-}
-
-    .product-title {
-        font-size: 65;
-        font-weight: 400;
-        margin: 0px;
-    }
-
-    .product-options {
-    display: flex;
-    flex-direction: column;
-    gap: 35px;
-    }
-
-
-
-    .gallery-thumbnails img {
-        width: 50px;
-        margin-bottom: 10px;
-    }
-
-    .gallery-main img {
-        width: 100%;
-    }
-
-    .product-details {
-    display: flex;
-    gap: 35px;
-    flex-direction: column;
-}
-
-    .breadcrumb a {
-        color: #555;
-        text-decoration: none;
-    }
-
-    .product-rating .stars {
-        color: gold;
-    }
-
-    .product-options label {
-        font-weight: bold;
-    }
-
-    .sizes label,
-    .colors label {
-        display: inline-block;
-        margin-right: 10px;
-    }
-
-    .colors label {
-        width: 20px;
-        height: 20px;
-        display: inline-block;
-        border: 1px solid #ddd;
-        border-radius: 50%;
-    }
-
-    .product-price {
-        margin-top: 20px;
-           font-size: 36px;
-        font-weight: bold;
-        margin-bottom: 20px;
-    }
-
-    .product-features {
-        list-style: none;
-        padding: 0;
-        margin-top: 20px;
-    }
-
-    .product-features li {
-        margin-bottom: 10px;
-    }
-
-    ul.product-features {
-    padding-top: 50px;
-    border-top: 1px solid black;
-}
-
-.product-price div {
-    padding-top: 20px;
-    display: flex;
-    align-items: center;
-    gap: 35px;
-}
-.product-price div button {
-    margin: 0px;
-}
-    </style>
-
-
-
-
-    <div class="container">
+<div class="container">
     <div class="product-page">
-    <div class="product-gallery">
-        <div class="gallery-main">
-        <img src='{{ product.featured_image | img_url: '1024x1024' }}' alt="{{ product.title }}">
-        </div>
-    </div>
-
-    <div class="product-details">
-        <nav class="breadcrumb">
-        {% if breadcrumbs %}
-            {% for crumb in breadcrumbs %}
-            {% if forloop.last %}
-                <span>{{ crumb.title }}</span>
-            {% else %}
-                <a href="{{ crumb.url }}">{{ crumb.title }}</a> >
-            {% endif %}
-            {% endfor %}
-        {% else %}
-            <a href="/">Home</a>
-        {% endif %}
-        </nav>
-
-        <h1 class="product-title"> {{ product.title }} </h1>
-       {% if product.description != blank %}
-  {% assign paragraphs = product.description | split: '</p>' %}
-  {% for paragraph in paragraphs %}
-    {% if paragraph != '<p>' and paragraph != '' %}
-      {{ paragraph }}</p>
-    {% endif %}
-  {% endfor %}
-{% endif %}
-        <div class="product-price">
-            <span class="price">{{product.price | money }}</span>
-            <div>
-                <button class="add-to-cart">Add to cart</button>
-                <button href="/checkout?add={{ product.variants.first.id }}:1" class="buy-now-button">
-                Buy Now!
-                </button>
+        <div class="product-gallery">
+            <div class="gallery-main">
+                <img src='{{ product.featured_image | img_url: '1024x1024' }}' alt="{{ product.title }}">
             </div>
         </div>
 
-        <ul class="product-features">
-        <li>Secure payment</li>
-        <li>Size & Fit</li>
-        <li>Free shipping</li>
-        <li>Free Shipping & Returns</li>
-        </ul>
-    </div>
+        <div class="product-details">
+            <nav class="breadcrumb">
+                {% if breadcrumbs %}
+                    {% for crumb in breadcrumbs %}
+                        {% if forloop.last %}
+                            <span>{{ crumb.title }}</span>
+                        {% else %}
+                            <a href="{{ crumb.url }}">{{ crumb.title }}</a> >
+                        {% endif %}
+                    {% endfor %}
+                {% else %}
+                    <a href="/">Home</a>
+                {% endif %}
+            </nav>
+
+            <h1 class="product-title"> {{ product.title }} </h1>
+            {% if product.description != blank %}
+                {% assign paragraphs = product.description | split: '</p>' %}
+                {% for paragraph in paragraphs %}
+                    {% if paragraph != '<p>' and paragraph != '' %}
+                        {{ paragraph }}</p>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+            <div class="product-price">
+                <span class="price">{{ product.price | money }}</span>
+                <div>
+                    {% form 'product', product %}
+                    <div class="product-options">
+                    <div class='hiden'>
+                        <select id="variant-select" name="id">
+                            {% for variant in product.variants %}
+                                <option value="{{ variant.id }}">
+                                    {{ variant.title }}
+                                </option>
+                            {% endfor %}
+                        </select>
+                        </div>
+                        <input type="number" id="quantity" name="quantity" value="1" min="1">
+                        <button type="submit">Add to cart</button>
+                    </div>
+                    
+                    
+                    {% endform %}
+                </div>
+            </div>
+
+            <ul class="product-features">
+                <li>ID product: {{ product.id }}</li>
+                <li>Title: {{ product.title }}</li>
+                <li>Vendor: {{ product.vendor }}</li>
+                <li>Price: {{ product.price | money }}</li>
+                <li>Available: {% if product.available %} In stock {% else %} Out of stock {% endif %}</li>
+                <li>Tags: {{ product.tags | join: ', ' }}</li>
+                <li>SKU: {{ product.variants.first.sku }}</li>
+                <li>Weight: {{ product.variants.first.weight }} {{ product.variants.first.weight_unit }}</li>
+            </ul>
+        </div>
     </div>
 </div>
-
