@@ -1,0 +1,83 @@
+
+
+<section>
+    <div class="container">
+        <div class="blocks-withouf-space-section">
+            <div class="image-row">
+                <div class="image-item" style="background-image: url('{{ section.settings.image1 | img_url: '2048x2048' }}');">
+                    <div class="text-content">
+                        <a href="#">
+                            <h3>{{ section.settings.text1_heading }}</h3>
+                            <p>{{ section.settings.text1_body }}</p>
+                            <img src="{{ section.settings.image2 | img_url: '200x200' }}" alt="{{ section.settings.text1_heading }}">
+                        </a>
+                    </div>
+                </div>
+                <div class="image-item" style="background-image: url('{{ section.settings.image3 | img_url: '2048x2048' }}');">
+                    <div class="text-content">
+                        <a href="#">
+                            <h3>{{ section.settings.text2_heading }}</h3>
+                            <p>{{ section.settings.text2_body }}</p>
+                            <img src="{{ section.settings.image4 | img_url: '200x200' }}" alt="{{ section.settings.text2_heading }}">
+                        </a>
+                    </div>
+        </div>
+</section>
+
+
+
+
+
+{% schema %}
+{
+    "name": "Blocks Without Space",
+
+    "settings":[
+        {
+        "type": "image_picker",
+        "id": "image1",
+        "label": "Background for left block"
+        },
+        {
+        "type": "text",
+        "id": "text1_heading",
+        "label": "Heading for left block",
+        },
+        {
+        "type": "textarea",
+        "id": "text1_body",
+        "label": "Text for left block",
+        },
+        {
+        "type": "image_picker",
+        "id": "image2",
+        "label": "image for left block"
+        },
+
+
+        {
+        "type": "image_picker",
+        "id": "image3",
+        "label": "Background for right block"
+        },
+        {
+        type: "text",
+        id: "text3_heading",
+        label: "Heading for Right Block",
+        },
+        {
+        type: "textarea",
+        id: "text3_body",
+        label: "Text for Right Block",
+        },
+        {
+        "type": "image_picker",
+        "id": "image4",
+        "label": "Image for left block"
+        },
+    ]
+
+    "presets"
+
+}
+{% endschema %}
