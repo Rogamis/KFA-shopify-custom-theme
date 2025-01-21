@@ -11,7 +11,7 @@
           <form method="post" action="/cart/change">
             <input type="hidden" name="id" value="{{ item.key }}">
             <input type="hidden" name="quantity" value="0">
-            <button type="submit" class="remove-button">×</button>
+            <a type="submit" class="remove-button">×</a>
           </form>
         </div>
         <div class="cart-item-image">
@@ -36,10 +36,12 @@
     </div>
 
     <div class="cart-total">
+    <div class='total-price'>
       <p> Total: {{ cart.total_price | money }} </p>
-          <p>Discount: -{{ cart.total_discount | money }}</p>
-      <a href="/checkout" class="checkout-button">Proceed to Checkout</a>
-      <div>
+      <p>Discount: -{{ cart.total_discount | money }}</p>
+     </div>
+      <div class='cart-btns'>
+       <a href="/checkout" class="checkout-button">Proceed to Checkout</a>
         <p>Please note that orders from different suppliers may take longer due to differences in order processing times by the customer.</p>
       </div>
     </div>

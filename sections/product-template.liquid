@@ -1,53 +1,151 @@
-<div class="container">
-    <div class="product-detail-page">
-        <div class="product-detail-container">
-            <div class="product-gallery">
-                {% for image in product.images %}
-                <div class="gallery-thumbnail">
-                    <img src="{{ image.src | img_url: '520x785' }}" alt="{{ product.title }}">
-                </div>
-                {% endfor %}
-            </div>
+    <style>
+   .product-page {
+    display: flex;
+    gap: 75px;
+    padding-top: 75px;
+}
 
-            <div class="product-info">
-                <div class="breadcrumbs">
-                    <a href="/">Shop</a> > <a href="/collections/{{ product.collections.first.handle }}">{{ product.collections.first.title }}</a> > {{ product.title }}
-                </div>
+    .product-title {
+        font-size: 65;
+        font-weight: 400;
+        margin: 0px;
+    }
 
-                <h1 class="product-title">{{ product.title }}</h1>
+    .product-options {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    }
 
-                <div class="product-reviews">
-                    <span class="stars">⭐ ⭐ ⭐ ⭐ ⭐</span>
-                    <span class="rating">{{ product.rating | default: "4.5" }}</span>
-                    <a href="#reviews" class="comments">(120 comments)</a>
-                </div>
 
-                <div class="product-options">
-                    <p>Select Size</p>
-                    <form method="post" action="/cart/add">
-                        <input type="hidden" name="id" value="{{ product.variants.first.id }}">
-                        <div class="sizes">
-                            <select name="id" required>
-                                {% for variant in product.variants %}
-                                <option value="{{ variant.id }}">{{ variant.option1 }}</option>
-                                {% endfor %}
-                            </select>
-                        </div>
-                        <button type="submit" class="add-to-cart-button">Add to Cart</button>
-                    </form>
-                </div>
 
-                <div class="product-price">
-                    <span>{{ product.price | money }}</span>
-                </div>
+    .gallery-thumbnails img {
+        width: 50px;
+        margin-bottom: 10px;
+    }
 
-                <div class="product-highlights">
-                    <p>✅ Secure Payment</p>
-                    <p>✅ Free Shipping</p>
-                    <p>✅ Size & Fit Guide</p>
-                    <p>✅ Free Returns</p>
-                </div>
-            </div>
+    .gallery-main img {
+        width: 100%;
+    }
+
+    .product-details {
+    display: flex;
+    gap: 35px;
+    flex-direction: column;
+}
+
+    .breadcrumb a {
+        color: #555;
+        text-decoration: none;
+    }
+
+    .product-rating .stars {
+        color: gold;
+    }
+
+    .product-options label {
+        font-weight: bold;
+    }
+
+    .sizes label,
+    .colors label {
+        display: inline-block;
+        margin-right: 10px;
+    }
+
+    .colors label {
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+        border: 1px solid #ddd;
+        border-radius: 50%;
+    }
+
+    .product-price {
+        margin-top: 20px;
+           font-size: 36px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    .product-features {
+        list-style: none;
+        padding: 0;
+        margin-top: 20px;
+    }
+
+    .product-features li {
+        margin-bottom: 10px;
+    }
+
+    ul.product-features {
+    padding-top: 50px;
+    border-top: 1px solid black;
+}
+
+.product-price div {
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+.product-price div button {
+    margin: 0px;
+}
+    </style>
+
+
+
+
+    <div class="container">
+    <div class="product-page">
+    <div class="product-gallery">
+        <div class="gallery-main">
+        <img src='{{ product.featured_image | img_url: '1024x1024' }}' alt="{{ product.title }}">
         </div>
     </div>
+
+    <div class="product-details">
+        <nav class="breadcrumb">
+        {% if breadcrumbs %}
+            {% for crumb in breadcrumbs %}
+            {% if forloop.last %}
+                <span>{{ crumb.title }}</span>
+            {% else %}
+                <a href="{{ crumb.url }}">{{ crumb.title }}</a> >
+            {% endif %}
+            {% endfor %}
+        {% else %}
+            <a href="/">Home</a>
+        {% endif %}
+        </nav>
+
+        <h1 class="product-title"> {{ product.title }} </h1>
+       {% if product.description != blank %}
+  {% assign paragraphs = product.description | split: '</p>' %}
+  {% for paragraph in paragraphs %}
+    {% if paragraph != '<p>' and paragraph != '' %}
+      {{ paragraph }}</p>
+    {% endif %}
+  {% endfor %}
+{% endif %}
+        <div class="product-price">
+            <span class="price">{{product.price | money }}</span>
+            <div>
+                <button class="add-to-cart">Add to cart</button>
+                <button href="/checkout?add={{ product.variants.first.id }}:1" class="buy-now-button">
+                Buy Now!
+                </button>
+            </div>
+        </div>
+
+        <ul class="product-features">
+        <li>Secure payment</li>
+        <li>Size & Fit</li>
+        <li>Free shipping</li>
+        <li>Free Shipping & Returns</li>
+        </ul>
+    </div>
+    </div>
 </div>
+
