@@ -128,9 +128,15 @@ a {
 .image-item {
     padding: 20px;
 }
+.image-item:hover {
+    transform: translatey(-10px);
+    transition: 0.3s;
+}
 
-
-
+.two-background-images-section .image-item:hover{
+    transform: translateX(10px);
+    transition: 0.3s;
+}
 
 
 
