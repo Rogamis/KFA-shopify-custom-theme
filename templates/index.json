@@ -59,6 +59,18 @@
       "settings": {
         "collection": "assets"
       }
+    },
+    "blocks_withour_space_CeeNhr": {
+      "type": "blocks-withour-space",
+      "settings": {
+        "image1": "shopify://shop_images/unsplash_bBiuSdck8tU.png",
+        "text1_heading": "swtich",
+        "text1_body": "В нас ви можете замовити та почути всі світчі в \nасортименті!",
+        "image2": "shopify://shop_images/613_KC0oULL._AC_UL495_SR435_495_-removebg-preview_1.png",
+        "image3": "shopify://shop_images/Group_17413.png",
+        "text3_heading": "",
+        "text3_body": ""
+      }
     }
   },
   "order": [
@@ -66,6 +78,7 @@
     "categoies_show_cr9x8R",
     "two_block_image_XLT8Ji",
     "artisan_PkWwbX",
-    "artisan_TtFX6a"
+    "artisan_TtFX6a",
+    "blocks_withour_space_CeeNhr"
   ]
 }
