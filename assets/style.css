@@ -4,6 +4,10 @@
   padding: 1rem;
 }
 
+.header-section{
+  padding: 0px;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -138,6 +142,10 @@ a {
     transition: 0.3s;
 }
 
+.two-background-images-section .image-item:hover:nth-child(1){
+    transform: translateX(-10px);
+    transition: 0.3s;
+}
 
 
 
@@ -147,7 +155,7 @@ a {
     display: flex;
     gap: 20px;
     align-items: center;
-    padding-bottom: 50px;
+    padding-bottom: 20px;
 }
 
 .artisan-section h3 {
@@ -412,6 +420,5 @@ a {
 }
 
 .blocks-withouf-space-section {
-    padding-top: 120px;
 
 }
