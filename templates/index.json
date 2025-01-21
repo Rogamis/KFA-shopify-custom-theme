@@ -54,12 +54,6 @@
         "collection": "artisan"
       }
     },
-    "artisan_TtFX6a": {
-      "type": "artisan",
-      "settings": {
-        "collection": "assets"
-      }
-    },
     "blocks_withour_space_CeeNhr": {
       "type": "blocks-withour-space",
       "settings": {
@@ -71,14 +65,20 @@
         "text3_heading": "",
         "text3_body": ""
       }
+    },
+    "artisan_TtFX6a": {
+      "type": "artisan",
+      "settings": {
+        "collection": "assets"
+      }
     }
   },
   "order": [
     "hero",
     "categoies_show_cr9x8R",
     "two_block_image_XLT8Ji",
-    "artisan_PkWwbX",
     "artisan_TtFX6a",
+    "artisan_PkWwbX",
     "blocks_withour_space_CeeNhr"
   ]
 }
