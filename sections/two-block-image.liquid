@@ -1,22 +1,21 @@
-
-         <div class="container">
-        <div class="four-background-images-section">
+<div class="container">
+    <div class="four-background-images-section">
         <div class="image-row">
             <div class="image-item" style="background-image: url('{{ section.settings.image1 | img_url: '2048x2048' }}');">
-            <div class="text-content">
-                <h3>{{ section.settings.text1_heading }}</h3>
-                <p>{{ section.settings.text1_body }}</p>
-            </div>
+                <div class="text-content">
+                    <h3>{{ section.settings.text1_heading }}</h3>
+                    <p>{{ section.settings.text1_body }}</p>
+                </div>
             </div>
             <div class="image-item" style="background-image: url('{{ section.settings.image2 | img_url: '2048x2048' }}');">
-            <div class="text-content">
-                <h3>{{ section.settings.text2_heading }}</h3>
-                <p>{{ section.settings.text2_body }}</p>
-            </div>
-            </div>
+                <div class="text-content">
+                    <h3>{{ section.settings.text2_heading }}</h3>
+                    <p>{{ section.settings.text2_body }}</p>
+                </div>
             </div>
         </div>
-        </div>
+    </div>
+</div>
 
 {% schema %}
 {
@@ -24,35 +23,35 @@
   "settings": [
     {
       "type": "image_picker",
-      "id": "image1_1",
+      "id": "image1",
       "label": "Background Image 1"
     },
     {
       "type": "text",
-      "id": "text1_heading_1",
+      "id": "text1_heading",
       "label": "Heading for Block 1",
       "default": "Heading 1"
     },
     {
-      "type": "textarea_1",
-      "id": "text1_body",
+      "type": "textarea",
+      "id": "text1_body1",
       "label": "Text for Block 1",
       "default": "Add your text here for block 1."
     },
     {
       "type": "image_picker",
-      "id": "image2_2",
+      "id": "image2",
       "label": "Background Image 2"
     },
     {
       "type": "text",
-      "id": "text2_heading_2",
+      "id": "text2_heading",
       "label": "Heading for Block 2",
       "default": "Heading 2"
     },
     {
       "type": "textarea",
-      "id": "text2_body_2",
+      "id": "text2_body",
       "label": "Text for Block 2",
       "default": "Add your text here for block 2."
     }
