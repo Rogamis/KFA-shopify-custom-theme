@@ -55,7 +55,6 @@ a {
 .hero-section {
     display: flex;
     align-items: center;
-    height: 90vh;
     justify-content: space-between;
 }
 
@@ -85,7 +84,6 @@ a {
 .hero-section {
     display: flex;
     align-items: center;
-    height: 75vh;
     justify-content: space-between;
 }
 
