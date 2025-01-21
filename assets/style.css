@@ -126,17 +126,10 @@ a {
   }
 
 .image-item {
-    filter: grayscale(100%);
-    transition: filter 0.3s ease-in-out;
     padding: 20px;
 }
 
-.image-item:hover {
-    filter: grayscale(0%);
-    transition: filter 0.3s ease-in-out;
-    padding: 20px;
-    
-}
+
 
 
 
@@ -327,4 +320,18 @@ a {
   margin-top: 30px;
   font-size: 14px;
   line-height: 1.6;
+}
+
+
+
+
+.two-background-images-section .image-item {
+    width: 50%;
+    height: 450px;
+    margin-top: 20px;
+}
+
+.two-background-images-section .image-item h3 {
+    font-size: 96px;
+    text-transform: uppercase;
 }
