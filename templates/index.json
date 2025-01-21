@@ -37,23 +37,28 @@
         "text4_body": ""
       }
     },
+    "two_block_image_XLT8Ji": {
+      "type": "two-block-image",
+      "settings": {
+        "image1": "shopify://shop_images/Group_17411.png",
+        "text1_heading": "Gamingzone",
+        "text1_body1": "",
+        "image2": "shopify://shop_images/Group_17412.png",
+        "text2_heading": "for work",
+        "text2_body": ""
+      }
+    },
     "artisan_PkWwbX": {
       "type": "artisan",
       "settings": {
         "collection": "artisan"
-      }
-    },
-    "artisan_qaVKmX": {
-      "type": "artisan",
-      "settings": {
-        "collection": "frontpage"
       }
     }
   },
   "order": [
     "hero",
     "categoies_show_cr9x8R",
-    "artisan_PkWwbX",
-    "artisan_qaVKmX"
+    "two_block_image_XLT8Ji",
+    "artisan_PkWwbX"
   ]
 }
