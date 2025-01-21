@@ -1,52 +1,53 @@
-
 <div class="container">
     <div class="product-detail-page">
-    <div class="product-detail-container">
-        <div class="product-gallery">
-        {% for image in product.images %}
-            <div class="gallery-thumbnail">
-            <img src="{{ image.src | img_url: '520x785' }}" alt="{{ product.title }}">
+        <div class="product-detail-container">
+            <div class="product-gallery">
+                {% for image in product.images %}
+                <div class="gallery-thumbnail">
+                    <img src="{{ image.src | img_url: '520x785' }}" alt="{{ product.title }}">
+                </div>
+                {% endfor %}
             </div>
-        {% endfor %}
-        </div>
 
-        <div class="product-info">
-        <div class="breadcrumbs">
-            <a href="/">Shop</a> > <a href="/collections/{{ product.collections.first.handle }}">{{ product.collections.first.title }}</a> > {{ product.title }}
-        </div>
+            <div class="product-info">
+                <div class="breadcrumbs">
+                    <a href="/">Shop</a> > <a href="/collections/{{ product.collections.first.handle }}">{{ product.collections.first.title }}</a> > {{ product.title }}
+                </div>
 
-        <h1 class="product-title">{{ product.title }}</h1>
+                <h1 class="product-title">{{ product.title }}</h1>
 
-        <div class="product-reviews">
-            <span class="stars">⭐ ⭐ ⭐ ⭐ ⭐</span>
-            <span class="rating">{{ product.rating | default: "4.5" }}</span>
-            <a href="#reviews" class="comments">(120 comments)</a>
-        </div>
+                <div class="product-reviews">
+                    <span class="stars">⭐ ⭐ ⭐ ⭐ ⭐</span>
+                    <span class="rating">{{ product.rating | default: "4.5" }}</span>
+                    <a href="#reviews" class="comments">(120 comments)</a>
+                </div>
 
-        <div class="product-options">
-            <p>Select Size</p>
-            <div class="sizes">
-            {% for variant in product.variants %}
-                <button class="size-button">{{ variant.option1 }}</button>
-            {% endfor %}
+                <div class="product-options">
+                    <p>Select Size</p>
+                    <form method="post" action="/cart/add">
+                        <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+                        <div class="sizes">
+                            <select name="id" required>
+                                {% for variant in product.variants %}
+                                <option value="{{ variant.id }}">{{ variant.option1 }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <button type="submit" class="add-to-cart-button">Add to Cart</button>
+                    </form>
+                </div>
+
+                <div class="product-price">
+                    <span>{{ product.price | money }}</span>
+                </div>
+
+                <div class="product-highlights">
+                    <p>✅ Secure Payment</p>
+                    <p>✅ Free Shipping</p>
+                    <p>✅ Size & Fit Guide</p>
+                    <p>✅ Free Returns</p>
+                </div>
             </div>
         </div>
-
-        
-
-        <div class="add-to-cart">
-            <button class="add-to-cart-button">Add to Cart</button>
-            <span class="product-price">{{ product.price | money }}</span>
-        </div>
-
-        <div class="product-highlights">
-            <p>✅ Secure Payment</p>
-            <p>✅ Free Shipping</p>
-            <p>✅ Size & Fit Guide</p>
-            <p>✅ Free Returns</p>
-        </div>
-        </div>
     </div>
-    </div>
-    </div>
-
+</div>

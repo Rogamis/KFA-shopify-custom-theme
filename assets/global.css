@@ -10,6 +10,11 @@ a:hover{
   transition: 0.3s;
 }
 
+body{
+    font-family: 'Raleway', sans-serif;
+    color: #403928;
+}
+
 h1, h2, h3, h4, h5, h6, p, li, a {
   font-family: 'Raleway', sans-serif;
 }
