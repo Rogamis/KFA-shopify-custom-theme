@@ -467,6 +467,7 @@ a {
 }
 .empty-cart a.checkout-button {
     margin: 0px;
+    translate: 0.3s;
 }
 .cart-total {
     width: 30%;
@@ -570,6 +571,8 @@ form.item-quantity-form button {
     border-radius: 4px;
     cursor: pointer;
     color: black;
+    translate: 0.3s;
+
 }
 
 .total-price p {
@@ -592,6 +595,7 @@ form.item-quantity-form button {
 
 .checkout-button:hover {
   background-color: rgb(163, 145, 55);
+  translate: 0.3s;
 }
 
 .cart-btns p {

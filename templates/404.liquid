@@ -1,0 +1,60 @@
+<section>
+    <div class='container'>
+        <div class='not-found'>
+            <h1>4<span style='color:white'>0</span><span class='rotate'>4</span></h1>
+        </div>
+        <div class='text-container'>
+            <h2>Oops! Page not found</h2>
+            <p>The page you are looking for might have been removed or
+            temporarily unavailable.</p>
+            <a href='/' class='checkout-button'>Go back to Home</a>
+        </div>
+    </div>
+</section>
+
+
+<style>
+
+
+    .not-found h1 {
+            margin: 0px;
+            font-size: 200px;
+            font-weight: 700;
+            color: #EDD146;
+        }
+        .not-found h1 span {
+            margin: 0px;
+        }
+
+
+    .not-found h1 .rotate {
+        display: inline-block;
+        transform: rotate(30deg);
+        padding-left: 23px;
+    }
+    .text-container h2 {
+        font-size: 34px;
+}
+
+    .text-container p {
+        text-align: center;
+        width: 40%;
+        margin: 0;
+    }
+
+.not-found {
+    text-align: center;
+    background-image: url(/assets/404.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+
+    .text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0px;
+}
+</style>
