@@ -822,7 +822,12 @@ input#quantity {
     width: 100%;
 }
 
-
+.product-item img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 20px;
+}
 
 
 
