@@ -619,7 +619,7 @@ form.item-quantity-form button {
     .product-options {
     display: flex;
     flex-direction: column;
-    gap: 35px;
+    gap: 20px;
     }
 
 
@@ -736,8 +736,7 @@ ul.product-features {
     display: flex;
     align-items: center;
     gap: 35px;
-    flex-direction: row;
-    justify-content: flex-start;
+    justify-content: space-between;
 }
 
 div#product-list {
@@ -792,6 +791,41 @@ aside.filter-for-all-products .filter-header {
 .filter-header h2 {
     margin: 0px;
 }
+
+.product-options .product-quantity {
+    display: flex;
+    gap: 0px !important;
+    align-items: stretch !important;
+}
+
+.product-options button.quantity-btn {
+    padding: 5px 10px;
+    background: white;
+}
+
+input#quantity {
+    text-align: center;
+    width: 25%;
+    display: flex;
+    padding: 0px !important;
+    outline: none !important;
+    border: 0px !important;
+}
+
+.product-quantity {
+    width: 100%;
+    border: 1px solid #d9d9d9;
+    padding: 0px !important;
+}
+
+.product-options button.btn {
+    width: 100%;
+}
+
+
+
+
+
 
 
 @media (max-width: 768px) {

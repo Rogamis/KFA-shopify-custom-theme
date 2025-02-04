@@ -35,34 +35,46 @@
                 <div>
                     {% form 'product', product %}
                     <div class="product-options">
-                    <div class='hiden'>
-                        <select id="variant-select" name="id">
-                            {% for variant in product.variants %}
-                                <option value="{{ variant.id }}">
-                                    {{ variant.title }}
-                                </option>
-                            {% endfor %}
-                        </select>
+                        <div class='hiden'>
+                            <select id="variant-select" name="id">
+                                {% for variant in product.variants %}
+                                    <option value="{{ variant.id }}">
+                                        {{ variant.title }}
+                                    </option>
+                                {% endfor %}
+                            </select>
                         </div>
-                        <input type="number" id="quantity" name="quantity" value="1" min="1">
-                        <button type="submit">Add to cart</button>
+                        <div class="product-quantity">
+                            <button type="button" class="quantity-btn minus">-</button>
+                            <input type="number" id="quantity" name="quantity" value="1" min="1">
+                            <button type="button" class="quantity-btn plus">+</button>
+                        </div>
+                        <button type="submit" class="btn">Add to Cart</button>
+                         <ul class="product-features">
                     </div>
-                    
-                    
                     {% endform %}
                 </div>
             </div>
-
-            <ul class="product-features">
-                <li>ID product: {{ product.id }}</li>
-                <li>Title: {{ product.title }}</li>
-                <li>Vendor: {{ product.vendor }}</li>
-                <li>Price: {{ product.price | money }}</li>
-                <li>Available: {% if product.available %} In stock {% else %} Out of stock {% endif %}</li>
-                <li>Tags: {{ product.tags | join: ', ' }}</li>
-                <li>SKU: {{ product.variants.first.sku }}</li>
-                <li>Weight: {{ product.variants.first.weight }} {{ product.variants.first.weight_unit }}</li>
-            </ul>
         </div>
     </div>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const minusBtn = document.querySelector('.quantity-btn.minus');
+        const plusBtn = document.querySelector('.quantity-btn.plus');
+        const quantityInput = document.getElementById('quantity');
+
+        minusBtn.addEventListener('click', function() {
+            let currentValue = parseInt(quantityInput.value);
+            if (currentValue > 1) {
+                quantityInput.value = currentValue - 1;
+            }
+        });
+
+        plusBtn.addEventListener('click', function() {
+            let currentValue = parseInt(quantityInput.value);
+            quantityInput.value = currentValue + 1;
+        });
+    });
+</script>
