@@ -1,0 +1,50 @@
+<div>
+Test layout
+</div>
+
+
+
+{% schema %}
+{
+  "name": "Hero Section",
+  "settings": [
+    {
+      "id": "hero_image",
+      "type": "image_picker",
+      "label": "Hero Image"
+    },
+    {
+      "id": "hero_heading",
+      "type": "text",
+      "label": "Hero Heading"
+    },
+    {
+      "id": "hero_subheading",
+      "type": "textarea",
+      "label": "Hero Subheading"
+    },
+    {
+      "id": "hero_button_text",
+      "type": "text",
+      "label": "Button Text"
+    },
+    {
+      "id": "hero_button_link",
+      "type": "url",
+      "label": "Button Link"
+    },
+    {
+      "id": "class",
+      "type": "text",
+      "label": "CSS Class",
+      "default": "hero-section"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero Section",
+      "category": "Custom Sections"
+    }
+  ]
+}
+{% endschema %}
