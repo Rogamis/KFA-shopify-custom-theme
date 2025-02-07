@@ -20,16 +20,7 @@
                     <a href="/">Home</a>
                 {% endif %}
             </nav>
-
             <h1 class="product-title"> {{ product.title }} </h1>
-            {% if product.description != blank %}
-                {% assign paragraphs = product.description | split: '</p>' %}
-                {% for paragraph in paragraphs %}
-                    {% if paragraph != '<p>' and paragraph != '' %}
-                        {{ paragraph }}</p>
-                    {% endif %}
-                {% endfor %}
-            {% endif %}
             <div class="product-price">
                 <span class="price">{{ product.price | money }}</span>
                 <div>
@@ -56,6 +47,16 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div>
+            {% if product.description != blank %}
+                {% assign paragraphs = product.description | split: '</p>' %}
+                {% for paragraph in paragraphs %}
+                    {% if paragraph != '<p>' and paragraph != '' %}
+                        {{ paragraph }}</p>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
     </div>
 </div>
 
