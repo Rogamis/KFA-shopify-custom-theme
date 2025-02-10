@@ -45,11 +45,14 @@
     <p>{{ section.settings.description }}</p>
     <a href="{{ section.settings.read_more_link }}" class="read-more">Read more</a>
   </div>
-  <div class="custom-kfa-lab__materials">
-    {% for material in section.settings.materials_list | split: '\n' %}
-      <div class="material">{{ material }}</div>
-    {% endfor %}
-  </div>
+ <div class="custom-kfa-lab__materials">
+  {% for material in section.settings.materials_list %}
+    <div class="material">
+        <p>{{ material }}</p>
+    </div>
+  {% endfor %}
+</div>
+
 </section>
 
 <style>
