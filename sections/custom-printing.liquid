@@ -1,0 +1,81 @@
+{% schema %}
+{
+  "name": "Custom KFA Lab",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "CUSTOM KFA LAB"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "We offer 3D printing services for custom artisan keycaps using a wide range of high-quality materials. Our keycaps are crafted with precision, durability, and attention to detail to enhance your keyboard experience."
+    },
+    {
+      "type": "url",
+      "id": "read_more_link",
+      "label": "Read More Link"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "textarea",
+      "id": "materials_list",
+      "label": "Materials List (one per line)",
+      "default": "ABS\nPLA\nPETG\nPBT\nNYLON\nPC\nRESIN\nCARBON\nFILAMENTS"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom KFA Lab"
+    }
+  ]
+}
+{% endschema %}
+
+<section class="custom-kfa-lab" style="background-image: url('{{ section.settings.background_image | img_url: 'master' }}');">
+  <div class="custom-kfa-lab__content">
+    <h2>{{ section.settings.title }}</h2>
+    <p>{{ section.settings.description }}</p>
+    <a href="{{ section.settings.read_more_link }}" class="read-more">Read more</a>
+  </div>
+  <div class="custom-kfa-lab__materials">
+    {% for material in section.settings.materials_list | split: '\n' %}
+      <div class="material">{{ material }}</div>
+    {% endfor %}
+  </div>
+</section>
+
+<style>
+.custom-kfa-lab {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px;
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+.custom-kfa-lab__content {
+  max-width: 50%;
+}
+.custom-kfa-lab__materials {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+}
+.material {
+  font-size: 24px;
+  font-weight: bold;
+}
+.read-more {
+  color: white;
+  text-decoration: underline;
+}
+</style>
