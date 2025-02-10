@@ -40,6 +40,7 @@
 {% endschema %}
 
 <section class="custom-kfa-lab" style="background-image: url('{{ section.settings.background_image | img_url: 'master' }}');">
+<div class='container'> 
   <div class="custom-kfa-lab__content">
     <h2>{{ section.settings.title }}</h2>
     <p>{{ section.settings.description }}</p>
@@ -51,6 +52,7 @@
         <p>{{ material }}</p>
     </div>
   {% endfor %}
+    </div>
 </div>
 
 </section>
@@ -81,4 +83,43 @@
   color: white;
   text-decoration: underline;
 }
+
+.custom-kfa-lab__content h2 {
+    font-size: 64px;
+    width: 55%;
+}
+
+
+
+.custom-kfa-lab {
+    height: 700px;
+    display: flex
+;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+.custom-kfa-lab__content h2 {
+    color: white;
+}
+
+.custom-kfa-lab__content h2 {
+    color: white;
+}
+
+.custom-kfa-lab__content p {
+    color: white;
+}
+
+section.custom-kfa-lab .container {
+    display: flex
+;
+    justify-content: space-between;
+}
+
+
 </style>
