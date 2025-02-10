@@ -1,4 +1,12 @@
-
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero": {
@@ -40,6 +48,12 @@
         "text2_body": ""
       }
     },
+    "artisan_TtFX6a": {
+      "type": "artisan",
+      "settings": {
+        "collection": "assets"
+      }
+    },
     "artisan_PkWwbX": {
       "type": "artisan",
       "settings": {
@@ -58,10 +72,14 @@
         "text3_body": ""
       }
     },
-    "artisan_TtFX6a": {
-      "type": "artisan",
+    "custom_printing_nbb4Qt": {
+      "type": "custom-printing",
       "settings": {
-        "collection": "assets"
+        "title": "CUSTOM KFA LAB",
+        "description": "We offer 3D printing services for custom artisan keycaps using a wide range of high-quality materials. Our keycaps are crafted with precision, durability, and attention to detail to enhance your keyboard experience.",
+        "read_more_link": "",
+        "background_image": "shopify://shop_images/DALL_E_2025-02-10_22.28.18_-_A_modern_studio_filled_with_3D_printers_bathed_in_the_warm_glow_of_a_sunset._The_room_is_illuminated_by_natural_light_streaming_through_large_windows_1.png",
+        "materials_list": "ABS\nPLA\nPETG\nPBT\nNYLON\nPC\nRESIN\nCARBON\nFILAMENTS"
       }
     }
   },
@@ -71,6 +89,7 @@
     "two_block_image_XLT8Ji",
     "artisan_TtFX6a",
     "artisan_PkWwbX",
-    "blocks_withour_space_CeeNhr"
+    "blocks_withour_space_CeeNhr",
+    "custom_printing_nbb4Qt"
   ]
 }
