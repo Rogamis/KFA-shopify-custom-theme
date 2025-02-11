@@ -1,0 +1,12 @@
+{
+  "name": "Check Switch",
+  "sections": {
+    "header": {
+      "type": "header"
+    },
+    "main": {
+      "type": "rich-text"
+    }
+  },
+  "order": ["header", "main"]
+}
