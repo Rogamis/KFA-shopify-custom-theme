@@ -1,12 +1,29 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
+    "standart-hero": {
+      "type": "standart-hero",
+      "settings": {
+        "heading": "CHECK <br> SWITCH",
+        "background": "shopify://shop_images/Group_17442.png",
+        "background_color": "#f4f4f4"
+      }
+    },
     "main": {
       "type": "page",
       "settings": {}
-    },
-    "standart-hero": {
-      "type": "standart-hero"
     }
   },
-  "order": ["standart-hero", "main"]
+  "order": [
+    "standart-hero",
+    "main"
+  ]
 }
