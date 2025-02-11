@@ -1,3 +1,42 @@
+<section class="custom-kfa-lab" style="background-image: url('{{ section.settings.background_image | img_url: 'master' }}');">
+<div class='container'> 
+  <div class="custom-kfa-lab__content">
+    <h2>{{ section.settings.title }}</h2>
+    <p>{{ section.settings.description }}</p>
+    <a href="{{ section.settings.read_more_link }}" class="read-more">Read more</a>
+  </div>
+ <div class="custom-kfa-lab__materials">
+  {% for material in section.settings.materials_list %}
+    <div class="material">
+    <div class="material-list">
+        <p>ABS</p>
+        <p>PLA</p>
+        <p>PETG</p>
+        <p>PBT</p>
+        <p>NYLON</p>
+        <p>PC</p>
+        <p>RESIN</p>
+        <p>CARBON</p>
+        <p>FILAMENTS</p>
+        <!-- Dubl -->
+        <p>ABS</p>
+        <p>PLA</p>
+        <p>PETG</p>
+        <p>PBT</p>
+        <p>NYLON</p>
+        <p>PC</p>
+        <p>RESIN</p>
+        <p>CARBON</p>
+        <p>FILAMENTS</p>
+    </div>
+    </div>
+
+  {% endfor %}
+    </div>
+</div>
+
+</section>
+
 {% schema %}
 {
   "name": "Custom KFA Lab",
@@ -38,88 +77,3 @@
   ]
 }
 {% endschema %}
-
-<section class="custom-kfa-lab" style="background-image: url('{{ section.settings.background_image | img_url: 'master' }}');">
-<div class='container'> 
-  <div class="custom-kfa-lab__content">
-    <h2>{{ section.settings.title }}</h2>
-    <p>{{ section.settings.description }}</p>
-    <a href="{{ section.settings.read_more_link }}" class="read-more">Read more</a>
-  </div>
- <div class="custom-kfa-lab__materials">
-  {% for material in section.settings.materials_list %}
-    <div class="material">
-        <p>{{ material }}</p>
-    </div>
-  {% endfor %}
-    </div>
-</div>
-
-</section>
-
-<style>
-.custom-kfa-lab {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 50px;
-  background-size: cover;
-  background-position: center;
-  color: white;
-}
-.custom-kfa-lab__content {
-  max-width: 50%;
-}
-.custom-kfa-lab__materials {
-  display: flex;
-  flex-direction: column;
-  text-align: right;
-}
-.material {
-  font-size: 24px;
-  font-weight: bold;
-}
-.read-more {
-  color: white;
-  text-decoration: underline;
-}
-
-.custom-kfa-lab__content h2 {
-    font-size: 64px;
-    width: 55%;
-}
-
-
-
-.custom-kfa-lab {
-    height: 700px;
-    display: flex
-;
-    justify-content: space-between;
-    align-items: center;
-    padding: 50px;
-    background-size: cover;
-    background-position: center;
-    color: white;
-}
-
-.custom-kfa-lab__content h2 {
-    color: white;
-}
-
-.custom-kfa-lab__content h2 {
-    color: white;
-}
-
-.custom-kfa-lab__content p {
-    color: white;
-}
-
-section.custom-kfa-lab .container {
-    display: flex
-;
-    justify-content: space-between;
-}
-
-
-</style>

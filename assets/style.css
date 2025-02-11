@@ -885,3 +885,102 @@ input#quantity {
   }
 }
 
+
+
+.material {
+    width: max-content;
+    overflow: hidden;
+    height: 801px;
+    position: relative;
+}
+
+.material-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; 
+    align-items: center;
+    animation: scrollDown 10s linear infinite;
+}
+
+.custom-kfa-lab__content {
+    display: flex
+;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.material-list p {
+    padding: 0px;
+    font-size: 64px;
+    color: #EDD146;
+    margin: 0px;
+}
+@keyframes scrollDown {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-50%);
+    }
+}
+
+.custom-kfa-lab {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px;
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+.custom-kfa-lab__content {
+  max-width: 50%;
+}
+.custom-kfa-lab__materials {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+}
+.material {
+  font-size: 24px;
+  font-weight: bold;
+}
+.read-more {
+  color: white;
+  text-decoration: underline;
+}
+
+.custom-kfa-lab__content h2 {
+    font-size: 64px;
+    width: 55%;
+}
+
+.custom-kfa-lab {
+    height: 700px;
+    display: flex
+;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+.custom-kfa-lab__content h2 {
+    color: white;
+}
+
+.custom-kfa-lab__content h2 {
+    color: white;
+}
+
+.custom-kfa-lab__content p {
+    color: white;
+}
+
+section.custom-kfa-lab .container {
+    display: flex
+;
+    justify-content: space-between;
+}
