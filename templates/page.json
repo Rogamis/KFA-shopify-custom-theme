@@ -6,10 +6,8 @@
     },
     "standart-hero": {
       "type": "standart-hero"
-    },
-    "filter-switches": {
-      "type": "filter-switches"
     }
+    
   },
   "order": ["standart-hero", "main"]
 }
