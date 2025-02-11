@@ -20,10 +20,94 @@
     "main": {
       "type": "page",
       "settings": {}
+    },
+    "switch_filters_KV8VDW": {
+      "type": "switch-filters",
+      "blocks": {
+        "switch_qexdg8": {
+          "type": "switch",
+          "settings": {
+            "image": "shopify://shop_images/435002062-removebg-preview_1.png",
+            "title": "Hator Optical V2 Kailh Black Switch",
+            "color": "brown-switches"
+          }
+        },
+        "switch_adHb8H": {
+          "type": "switch",
+          "settings": {
+            "image": "shopify://shop_images/435002062-removebg-preview_1.png",
+            "title": "Hator Optical V2 Kailh Black Switch",
+            "color": "brown-switches"
+          }
+        },
+        "switch_aWamNW": {
+          "type": "switch",
+          "settings": {
+            "image": "shopify://shop_images/435002062-removebg-preview_1.png",
+            "title": "Hator Optical V2 Kailh Black Switch",
+            "color": "brown-switches"
+          }
+        },
+        "switch_rcFJPi": {
+          "type": "switch",
+          "settings": {
+            "image": "shopify://shop_images/343285957-removebg-preview_1.png",
+            "title": "Hator Optical V2 Kailh Black Switch",
+            "color": "white-switches"
+          }
+        },
+        "switch_grbbEX": {
+          "type": "switch",
+          "settings": {
+            "image": "shopify://shop_images/343285957-removebg-preview_1.png",
+            "title": "Hator Optical V2 Kailh Black Switch",
+            "color": "white-switches"
+          }
+        },
+        "switch_y88xRT": {
+          "type": "switch",
+          "settings": {
+            "image": "shopify://shop_images/373561073-removebg-preview_1.png",
+            "title": "Hator Optical V2 Kailh Black Switch",
+            "color": "black-switches"
+          }
+        },
+        "switch_4iD6zd": {
+          "type": "switch",
+          "settings": {
+            "image": "shopify://shop_images/373561073-removebg-preview_1.png",
+            "title": "Hator Optical V2 Kailh Black Switch",
+            "color": "black-switches"
+          }
+        },
+        "switch_TdtnA7": {
+          "type": "switch",
+          "settings": {
+            "image": "shopify://shop_images/373561073-removebg-preview_1.png",
+            "title": "Hator Optical V2 Kailh Black Switch",
+            "color": "black-switches"
+          }
+        }
+      },
+      "block_order": [
+        "switch_qexdg8",
+        "switch_adHb8H",
+        "switch_aWamNW",
+        "switch_rcFJPi",
+        "switch_grbbEX",
+        "switch_y88xRT",
+        "switch_4iD6zd",
+        "switch_TdtnA7"
+      ],
+      "settings": {
+        "heading": "CHECK SWITCH",
+        "background_color": "#f4f4f4"
+      }
     }
   },
   "order": [
     "standart-hero",
-    "main"
+    "main",
+    "switch_filters_KV8VDW"
   ]
 }
