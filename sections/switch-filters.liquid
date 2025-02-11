@@ -24,50 +24,15 @@
             <div class="filterGroup">
                 <div id="colorFilter">
                     <label><input type="radio" name="color" value="all" checked> All</label>
-                    {% for block in section.blocks %}
-                        <label><input type="radio" name="color" value="{{ block.settings.color }}"> {{ block.settings.color | capitalize }} Switches</label>
-                    {% endfor %}
+                    <label><input type="radio" name="color" value="red-switches"> Red Switches</label>
+                    <label><input type="radio" name="color" value="blue-switches"> Blue Switches</label>
+                    <label><input type="radio" name="color" value="green-switches"> Green Switches</label>
+                    <label><input type="radio" name="color" value="white-switches"> White Switches</label>
+                    <label><input type="radio" name="color" value="yellow-switches"> Yellow Switches</label>
+                    <label><input type="radio" name="color" value="brown-switches"> Brown Switches</label>
+                    <label><input type="radio" name="color" value="purple-switches"> Purple Switches</label>
+                    <label><input type="radio" name="color" value="black-switches"> Black Switches</label>
                 </div>
-            </div>
-
-            <div class="content-hover-blocks text" style="display: none;">
-                {% for block in section.blocks %}
-                    <div class="item {{ block.settings.color }}">
-                        <h3>{{ block.settings.description_title }}</h3>
-                        <div class="text-hover-blocks">
-                            <p>{{ block.settings.description_text }}</p>
-                        </div>
-                    </div>
-                {% endfor %}
-            </div>
-
-            <div class="table-switches" style="display: flex;">
-                <table border="1" cellpadding="10" cellspacing="0">
-                    <thead>
-                        <tr>
-                            <th>🔹 Switch</th>
-                            <th>🔹 Type</th>
-                            <th>🔹 Feedback</th>
-                            <th>🔹 Noise Level</th>
-                            <th>🔹 Actuation Force</th>
-                            <th>🔹 Best For</th>
-                            <th>🔹 Examples</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% for block in section.blocks %}
-                            <tr>
-                                <td>{{ block.settings.color | capitalize }}</td>
-                                <td>{{ block.settings.switch_type }}</td>
-                                <td>{{ block.settings.feedback }}</td>
-                                <td>{{ block.settings.noise_level }}</td>
-                                <td>{{ block.settings.actuation_force }}</td>
-                                <td>{{ block.settings.best_for }}</td>
-                                <td>{{ block.settings.examples }}</td>
-                            </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
             </div>
         </div>
     </div>
@@ -78,16 +43,6 @@
         radio.addEventListener('change', function(event) {
             var selectedColor = event.target.value;
             var items = document.querySelectorAll('.item');
-            var contentBlocks = document.querySelector('.content-hover-blocks');
-            var tableSwitches = document.querySelector('.table-switches');
-
-            if (selectedColor === 'all') {
-                contentBlocks.style.display = 'none';
-                tableSwitches.style.display = 'flex';
-            } else {
-                contentBlocks.style.display = 'flex';
-                tableSwitches.style.display = 'none';
-            }
 
             items.forEach(function(item) {
                 if (selectedColor === 'all' || item.classList.contains(selectedColor)) {
@@ -139,58 +94,20 @@
           "default": "Hator Optical V2 Kailh Black Switch"
         },
         {
-          "type": "text",
+          "type": "select",
           "id": "color",
           "label": "Switch Color",
-          "default": "red"
-        },
-        {
-          "type": "text",
-          "id": "description_title",
-          "label": "Description Title",
-          "default": "🔴 Red Switches – Light & Fast"
-        },
-        {
-          "type": "textarea",
-          "id": "description_text",
-          "label": "Description Text",
-          "default": "🔹 Best for fast-paced gaming and silent keystrokes."
-        },
-        {
-          "type": "text",
-          "id": "switch_type",
-          "label": "Switch Type",
-          "default": "Linear"
-        },
-        {
-          "type": "text",
-          "id": "feedback",
-          "label": "Feedback",
-          "default": "Smooth, no tactile bump"
-        },
-        {
-          "type": "text",
-          "id": "noise_level",
-          "label": "Noise Level",
-          "default": "Silent"
-        },
-        {
-          "type": "text",
-          "id": "actuation_force",
-          "label": "Actuation Force",
-          "default": "~45g"
-        },
-        {
-          "type": "text",
-          "id": "best_for",
-          "label": "Best For",
-          "default": "Gaming, quiet environments"
-        },
-        {
-          "type": "text",
-          "id": "examples",
-          "label": "Examples",
-          "default": "Cherry MX Red, Gateron Red, Akko Red"
+          "options": [
+            { "value": "red-switches", "label": "Red Switches" },
+            { "value": "blue-switches", "label": "Blue Switches" },
+            { "value": "green-switches", "label": "Green Switches" },
+            { "value": "white-switches", "label": "White Switches" },
+            { "value": "yellow-switches", "label": "Yellow Switches" },
+            { "value": "brown-switches", "label": "Brown Switches" },
+            { "value": "purple-switches", "label": "Purple Switches" },
+            { "value": "black-switches", "label": "Black Switches" }
+          ],
+          "default": "red-switches"
         }
       ]
     }
@@ -200,15 +117,6 @@
       "name": "Check Switch",
       "category": "Custom",
       "blocks": [
-        {
-          "type": "switch"
-        },
-        {
-          "type": "switch"
-        },
-        {
-          "type": "switch"
-        },
         {
           "type": "switch"
         }
