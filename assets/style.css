@@ -993,3 +993,164 @@ section.custom-kfa-lab .container {
 }
 
 
+
+
+
+
+.check-switch-hero {
+    height: 400px;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+}
+
+.check-switch-wrapper {
+    display: flex;
+}
+
+.check-switch-hero h1 {
+    color: white;
+    text-transform: uppercase;
+    font-size: 50px;
+}
+
+.left-side-items {
+    width: 50%;
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+.item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 50px 0;
+}
+
+.item img {
+    width: 50%;
+}
+
+.item h2{
+ text-transform: uppercase;
+    font-size: 32px;
+    width: 45%;
+    text-align: center;
+}
+
+/* Custom scrollbar styles */
+.left-side-items::-webkit-scrollbar {
+    width: 12px;
+}
+
+.left-side-items::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.left-side-items::-webkit-scrollbar-thumb {
+    background-color: #403928;
+    border-radius: 10px;
+    border: 3px solid #f1f1f1;
+}
+
+.left-side-items::-webkit-scrollbar-thumb:hover {
+    background: #403928;
+}
+
+.right-side-filter {
+    display: flex;
+    justify-content: flex-start;
+    width: 50%;
+    padding: 50px;
+    flex-direction: column;
+}
+
+.right-side-filter h2 {
+    font-size: 50px;
+    text-transform: uppercase;
+    text-align: center;
+
+}
+
+div#colorFilter {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.filterGroup {
+    display: flex;
+    justify-content: space-between;
+}
+
+div#colorFilter label {
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+.table-switches {
+    padding-top: 50px;
+}
+
+
+
+
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+thead {
+    background-color: #f5f5f5;
+}
+
+th, td {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    font-weight: bold;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+table th:first-child, 
+table td:first-child {
+    border-left: none;
+}
+
+table th:last-child, 
+table td:last-child {
+    border-right: none;
+}
+
+table thead tr:first-child th:first-child {
+    border-top-left-radius: 10px;
+}
+
+table thead tr:first-child th:last-child {
+    border-top-right-radius: 10px;
+}
+
+table tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 10px;
+}
+
+table tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 10px;
+}
