@@ -1,0 +1,87 @@
+{% schema %}
+{
+  "name": "Switches Filter",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "switch",
+      "name": "Switch",
+      "settings": [
+        { "id": "name", "type": "text", "label": "Switch Name" },
+        { "id": "image", "type": "image_picker", "label": "Switch Image" },
+        { "id": "type", "type": "text", "label": "Type" },
+        { "id": "feedback", "type": "text", "label": "Feedback" },
+        { "id": "noise", "type": "text", "label": "Noise Level" },
+        { "id": "force", "type": "text", "label": "Actuation Force" },
+        { "id": "best_for", "type": "textarea", "label": "Best For" },
+        { "id": "description", "type": "textarea", "label": "Description" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Switches Filter",
+      "blocks": [
+        { "type": "switch", "settings": { "name": "Black Switch", "type": "Linear", "feedback": "Smooth but requires more force", "noise": "Silent", "force": "60g", "best_for": "Work & long typing, Gaming", "description": "Black switches are heavier versions of red switches..." } }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+<div class="switches-container">
+  <!-- Left Side: Scrollable List -->
+  <div class="switches-list">
+    {% for block in section.blocks %}
+      <div class="switch-item" data-switch="{{ forloop.index }}">
+        <img src="{{ block.settings.image | img_url: 'medium' }}" alt="{{ block.settings.name }}">
+        <p>{{ block.settings.name }}</p>
+      </div>
+    {% endfor %}
+  </div>
+
+  <!-- Right Side: Filter and Description -->
+  <div class="switches-filter">
+    <h2>JUST HOVER <strong>OVER IT!</strong></h2>
+    <div class="filter-options">
+      {% for block in section.blocks %}
+        <label>
+          <input type="radio" name="switch-filter" value="{{ forloop.index }}">
+          {{ block.settings.name }}
+        </label>
+      {% endfor %}
+    </div>
+
+    <!-- Selected Switch Description Slider -->
+    <div class="switch-description-slider">
+      {% for block in section.blocks %}
+        <div class="switch-description" id="desc-{{ forloop.index }}" style="display: none;">
+          <h3>{{ block.settings.name }} – {{ block.settings.feedback }}</h3>
+          <img src="{{ block.settings.image | img_url: 'large' }}" alt="{{ block.settings.name }}">
+          <p><strong>Type:</strong> {{ block.settings.type }}</p>
+          <p><strong>Noise Level:</strong> {{ block.settings.noise }}</p>
+          <p><strong>Actuation Force:</strong> {{ block.settings.force }}</p>
+          <p><strong>Best for:</strong> {{ block.settings.best_for }}</p>
+          <p>{{ block.settings.description }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<style>
+  .switches-container { display: flex; gap: 20px; }
+  .switches-list { width: 30%; overflow-y: auto; max-height: 500px; }
+  .switches-filter { width: 70%; }
+  .filter-options label { display: block; cursor: pointer; }
+  .switch-description-slider { margin-top: 20px; }
+</style>
+
+<script>
+  document.querySelectorAll('input[name="switch-filter"]').forEach(input => {
+    input.addEventListener('change', function() {
+      document.querySelectorAll('.switch-description').forEach(desc => desc.style.display = 'none');
+      document.getElementById('desc-' + this.value).style.display = 'block';
+    });
+  });
+</script>

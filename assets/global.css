@@ -17,6 +17,12 @@ input {
     outline: none;
 }
 
+a.read-more:after {
+    content: '→';
+    margin-left: 10px;
+    text-decoration: none !important;
+}
+
 section#shadow-host-companion {
     display: none;
 }

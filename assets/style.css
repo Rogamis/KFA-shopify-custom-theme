@@ -947,7 +947,6 @@ input#quantity {
 }
 .read-more {
   color: white;
-  text-decoration: underline;
 }
 
 .custom-kfa-lab__content h2 {
@@ -984,3 +983,13 @@ section.custom-kfa-lab .container {
 ;
     justify-content: space-between;
 }
+
+.custom-kfa-lab__content h2 {
+    margin: 0px;
+}
+
+.custom-kfa-lab__content p {
+    margin-bottom: 40px;
+}
+
+
