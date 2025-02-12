@@ -87,6 +87,30 @@
             "title": "Hator Optical V2 Kailh Black Switch",
             "color": "black-switches"
           }
+        },
+        "switch_rifdWM": {
+          "type": "switch",
+          "settings": {
+            "image": "shopify://shop_images/51IOvr4ETBL._AC_UF1000_1000_QL80.jpg",
+            "title": "outemu Blue Switch",
+            "color": "blue-switches"
+          }
+        },
+        "switch_8igW4U": {
+          "type": "switch",
+          "settings": {
+            "image": "shopify://shop_images/51EpwaqwC5L.jpg",
+            "title": "Outemu Blue Switch",
+            "color": "red-switches"
+          }
+        },
+        "switch_QkzTeh": {
+          "type": "switch",
+          "settings": {
+            "image": "shopify://shop_images/71PyMC92UFL.jpg",
+            "title": "Razer Mechanical Switches",
+            "color": "green-switches"
+          }
         }
       },
       "block_order": [
@@ -97,7 +121,10 @@
         "switch_grbbEX",
         "switch_y88xRT",
         "switch_4iD6zd",
-        "switch_TdtnA7"
+        "switch_TdtnA7",
+        "switch_rifdWM",
+        "switch_8igW4U",
+        "switch_QkzTeh"
       ],
       "settings": {
         "background_color": "#f4f4f4"
