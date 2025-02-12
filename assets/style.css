@@ -995,7 +995,10 @@ section.custom-kfa-lab .container {
 
 
 
-
+.item h3 {
+    text-align: center;
+    font-size: 32px;
+}
 
 .check-switch-hero {
     height: 400px;
@@ -1029,12 +1032,12 @@ section.custom-kfa-lab .container {
 }
 
 .item img {
-    width: 50%;
+    width: 30%;
 }
 
-.item h2{
- text-transform: uppercase;
-    font-size: 32px;
+.item h2 {
+    text-transform: uppercase;
+    font-size: 20px;
     width: 45%;
     text-align: center;
 }

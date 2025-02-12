@@ -1,17 +1,9 @@
-<section class="check-switch-wrapper"
-    style="
-        {% if section.settings.background_image != blank %}
-            background-image: url('{{ section.settings.background_image | img_url: 'master' }}'); 
-            background-size: cover; 
-            background-position: center;
-        {% elsif section.settings.background_color != blank %}
-            background-color: {{ section.settings.background_color }};
-        {% endif %}
-    ">
+<section>
     <div class='container'>
+    <div class="check-switch-wrapper">
         <div class="left-side-items">
             {% for block in section.blocks %}
-                <div class="item {{ block.settings.color }}">
+                <div class="item {{ block.settings.color | replace: ' ', '-' | downcase }}">
                     <img src="{{ block.settings.image | img_url: 'master' }}" alt="{{ block.settings.title }}">
                     <h2>{{ block.settings.title }}</h2>
                 </div>
@@ -22,18 +14,239 @@
             <h2>Just hover <br><strong style="color:#EDD146">over it!</strong></h2>
             <div class="filterGroup">
                 <div id="colorFilter">
-                    <label><input type="radio" name="color" value="all" checked> All</label>
                     <label><input type="radio" name="color" value="red-switches"> Red Switches</label>
                     <label><input type="radio" name="color" value="blue-switches"> Blue Switches</label>
                     <label><input type="radio" name="color" value="green-switches"> Green Switches</label>
                     <label><input type="radio" name="color" value="white-switches"> White Switches</label>
+                  </div>
+
+                  <div id="colorFilter">
                     <label><input type="radio" name="color" value="yellow-switches"> Yellow Switches</label>
                     <label><input type="radio" name="color" value="brown-switches"> Brown Switches</label>
                     <label><input type="radio" name="color" value="purple-switches"> Purple Switches</label>
                     <label><input type="radio" name="color" value="black-switches"> Black Switches</label>
+                  </div>
                 </div>
+                <div class="content-hover-blocks text" style="display: none;">
+                  <div class="item red-switches">
+                      <h3>🔴 Red Switches – Light & Fast</h3>
+                      <div class="text-hover-blocks">
+                          <p>🔹 Specifications:<br>
+                          Type: Linear<br>
+                          Feedback: Smooth, no tactile bump<br>
+                          Noise Level: Silent<br>
+                          Actuation Force: ~45g</p>
+
+                          <p>🔹 Best for:<br>
+                          - Fast-paced gaming<br>
+                          - Users who prefer effortless keystrokes<br>
+                          - Quiet environments<br>
+                          Examples: Cherry MX Red, Gateron Red, Akko Red.</p>
+
+                          <p>🔹 Description:<br>
+                          Red switches are designed for speed and efficiency. They require minimal force to press, making them a favorite among gamers who need quick responses. Their smooth actuation also makes them great for long typing sessions without causing fatigue.</p>
+                      </div>
+                  </div>
+
+                  <div class="item blue-switches">
+                      <h3>🔵 Blue Switches – Clicky & Satisfying</h3>
+                      <div class="text-hover-blocks">
+                          <p>🔹 Specifications:<br>
+                          Type: Clicky<br>
+                          Feedback: Noticeable tactile bump with an audible click<br>
+                          Noise Level: Loud<br>
+                          Actuation Force: ~50g</p>
+
+                          <p>🔹 Best for:<br>
+                          - Typists who enjoy audible feedback<br>
+                          - Writers and programmers<br>
+                          - Users who prefer a classic mechanical feel<br>
+                          Examples: Cherry MX Blue, Gateron Blue, Akko Blue.</p>
+
+                          <p>🔹 Description:<br>
+                          Blue switches are known for their loud and clicky keystrokes, making them a favorite among typists. The pronounced tactile bump provides clear feedback, ensuring each keypress is deliberate. However, their noise level may not be suitable for shared or quiet environments.</p>
+                      </div>
+                  </div>
+
+                  <div class="item green-switches">
+                      <h3>🟢 Green Switches – Heavy & Clicky</h3>
+                      <div class="text-hover-blocks">
+                          <p>🔹 Specifications:<br>
+                          Type: Clicky<br>
+                          Feedback: Strong tactile bump with a loud click<br>
+                          Noise Level: Very Loud<br>
+                          Actuation Force: ~80g</p>
+
+                          <p>🔹 Best for:<br>
+                          - Users who love strong resistance and feedback<br>
+                          - Typists who prefer a firm keypress<br>
+                          - Classic mechanical keyboard enthusiasts<br>
+                          Examples: Cherry MX Green, Gateron Green, Akko Green.</p>
+
+                          <p>🔹 Description:<br>
+                          Green switches are similar to blue switches but require more force to actuate, making them the heaviest clicky option. They provide a crisp, satisfying click with a pronounced bump, perfect for those who enjoy deliberate, forceful keystrokes.</p>
+                      </div>
+                  </div>
+
+                  <div class="item white-switches">
+                      <h3>⚪ White Switches – Soft & Silent</h3>
+                      <div class="text-hover-blocks">
+                          <p>🔹 Specifications:<br>
+                          Type: Linear or Tactile (depends on the manufacturer)<br>
+                          Feedback: Smooth or subtle bump<br>
+                          Noise Level: Silent or very quiet<br>
+                          Actuation Force: ~35g - 50g</p>
+
+                          <p>🔹 Best for:<br>
+                          - Users who prefer quiet typing<br>
+                          - Office environments and shared spaces<br>
+                          - Fast and effortless keystrokes<br>
+                          Examples: Gateron Silent White, Akko CS White, Kailh BOX White.</p>
+
+                          <p>🔹 Description:<br>
+                          White switches are known for their soft and silent actuation. Some models, like Gateron Silent White, are fully linear with smooth keystrokes, while others, like Kailh BOX White, have a light click and tactile feedback. They are an excellent choice for users who want a quiet yet responsive typing experience.</p>
+                      </div>
+                  </div>
+
+                  <div class="item yellow-switches">
+                      <h3>🟡 Yellow Switches – Smooth & Speedy</h3>
+                      <div class="text-hover-blocks">
+                          <p>🔹 Specifications:<br>
+                          Type: Linear<br>
+                          Feedback: Smooth, no tactile bump<br>
+                          Noise Level: Quiet<br>
+                          Actuation Force: ~50g</p>
+
+                          <p>🔹 Best for:<br>
+                          - Gamers who want a fast response<br>
+                          - Users who prefer silent but smooth keystrokes<br>
+                          - Long typing sessions<br>
+                          Examples: Gateron Yellow, Akko CS Yellow.</p>
+
+                          <p>🔹 Description:<br>
+                          Yellow switches are a middle ground between reds and blacks. They offer a smooth keystroke with slightly higher actuation force than reds, making them ideal for gaming and typing.</p>
+                      </div>
+                  </div>
+
+                  <div class="item brown-switches">
+                      <h3>🟤 Brown Switches – Balanced & Versatile</h3>
+                      <div class="text-hover-blocks">
+                          <p>🔹 Specifications:<br>
+                          Type: Tactile<br>
+                          Feedback: Gentle tactile bump<br>
+                          Noise Level: Medium<br>
+                          Actuation Force: ~55g</p>
+
+                          <p>🔹 Best for:<br>
+                          - Office workers<br>
+                          - Gamers who want feedback without loud clicks<br>
+                          - All-purpose typing<br>
+                          Examples: Cherry MX Brown, Gateron Brown, Akko Brown.</p>
+
+                          <p>🔹 Description:<br>
+                          Brown switches are a hybrid between linear and clicky switches, offering a tactile bump without a loud click. They are great for users who want feedback without excessive noise.</p>
+                      </div>
+                  </div>
+
+                  <div class="item purple-switches">
+                      <h3>🟣 Purple Switches – Tactile & Silent</h3>
+                      <div class="text-hover-blocks">
+                          <p>🔹 Specifications:<br>
+                          Type: Tactile<br>
+                          Feedback: Strong tactile bump<br>
+                          Noise Level: Quiet<br>
+                          Actuation Force: ~50g - 60g</p>
+
+                          <p>🔹 Best for:<br>
+                          - Users who want tactile feedback but prefer silence<br>
+                          - Office and workspaces<br>
+                          Examples: Akko CS Lavender Purple, Kailh Pro Purple.</p>
+
+                          <p>🔹 Description:<br>
+                          Purple switches offer a pronounced tactile bump but without the clicky sound of blue or green switches. They are ideal for typists and office workers.</p>
+                      </div>
+                  </div>
+
+                  <div class="item black-switches">
+                      <h3>⚫ Black Switches – Heavy & Precise</h3>
+                      <div class="text-hover-blocks">
+                          <p>🔹 Specifications:<br>
+                          Type: Linear<br>
+                          Feedback: Smooth, no tactile bump<br>
+                          Noise Level: Silent<br>
+                          Actuation Force: ~60g</p>
+
+                          <p>🔹 Best for:<br>
+                          - Gamers who want high precision<br>
+                          - Typists who prefer a firm press<br>
+                          - Users who dislike accidental keypresses<br>
+                          Examples: Cherry MX Black, Gateron Black, Akko CS Black.</p>
+
+                          <p>🔹 Description:<br>
+                          Black switches are similar to reds but require more force to actuate. This prevents accidental keypresses, making them a great choice for gamers and precise typists.</p>
+                      </div>
+                  </div>
+                </div>
+
+                <div class="table-switches" style="display: flex;">
+                        <table border="1" cellpadding="10" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>🔹 Switch</th>
+                                <th>🔹 Type</th>
+                                <th>🔹 Feedback</th>
+                                <th>🔹 Noise Level</th>
+                                <th>🔹 Actuation Force</th>
+                                <th>🔹 Best For</th>
+                                <th>🔹 Examples</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>🔵 Blue</td>
+                                <td>Clicky</td>
+                                <td>Tactile bump with audible click</td>
+                                <td>Loud</td>
+                                <td>~50g</td>
+                                <td>Typists, writers, programmers</td>
+                                <td>Cherry MX Blue, Gateron Blue, Akko Blue</td>
+                            </tr>
+                            <tr>
+                                <td>🔴 Red</td>
+                                <td>Linear</td>
+                                <td>Smooth, no tactile bump</td>
+                                <td>Silent</td>
+                                <td>~45g</td>
+                                <td>Gaming, quiet environments</td>
+                                <td>Cherry MX Red, Gateron Red, Akko Red</td>
+                            </tr>
+                            <tr>
+                                <td>🟢 Green</td>
+                                <td>Clicky</td>
+                                <td>Strong tactile bump with a loud click</td>
+                                <td>Very Loud</td>
+                                <td>~80g</td>
+                                <td>Users who prefer firm keystrokes, classic mechanical keyboard feel</td>
+                                <td>Cherry MX Green, Gateron Green, Akko Green</td>
+                            </tr>
+                            <tr>
+                                <td>⚪ White</td>
+                                <td>Linear / Tactile</td>
+                                <td>Smooth or subtle bump</td>
+                                <td>Silent or very quiet</td>
+                                <td>~35g - 50g</td>
+                                <td>Office work, quiet typing, fast keystrokes</td>
+                                <td>Gateron Silent White, Akko CS White, Kailh BOX White</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    </div>
             </div>
-        </div>
+            </div>
+            
+            
+    </div>
     </div>
 </section>
 
@@ -41,24 +254,45 @@
     document.querySelectorAll('#colorFilter input').forEach(function(radio) {
         radio.addEventListener('change', function(event) {
             var selectedColor = event.target.value;
-            var items = document.querySelectorAll('.item');
+            var switchItems = document.querySelectorAll('.left-side-items .item');
+            var hoverBlocks = document.querySelectorAll('.content-hover-blocks .item');
+            var tableSwitches = document.querySelector('.table-switches');
 
-            items.forEach(function(item) {
-                if (selectedColor === 'all' || item.classList.contains(selectedColor)) {
-                    item.style.display = 'flex';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
+            if (selectedColor === 'all') {
+                tableSwitches.style.display = 'flex'; // Показываем таблицу
+                document.querySelector('.content-hover-blocks').style.display = 'none';
+
+                switchItems.forEach(item => item.style.display = 'flex'); // Показываем все свитчи
+                hoverBlocks.forEach(item => item.style.display = 'none'); // Скрываем описания
+            } else {
+                tableSwitches.style.display = 'none'; // Прячем таблицу
+                document.querySelector('.content-hover-blocks').style.display = 'block';
+
+                switchItems.forEach(item => {
+                    if (item.classList.contains(selectedColor)) {
+                        item.style.display = 'flex';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+
+                hoverBlocks.forEach(item => {
+                    if (item.classList.contains(selectedColor)) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            }
         });
     });
 </script>
+
 
 {% schema %}
 {
   "name": "Check Switch",
   "settings": [
-    
     {
       "type": "image_picker",
       "id": "background_image",
