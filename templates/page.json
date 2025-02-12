@@ -40,6 +40,22 @@
             "color": "green-switches"
           }
         },
+        "switch_DLpnQ8": {
+          "type": "switch",
+          "settings": {
+            "image": "shopify://shop_images/71PyMC92UFL.jpg",
+            "title": "Hator Optical V2 Kailh Green Switch",
+            "color": "green-switches"
+          }
+        },
+        "switch_GFcihn": {
+          "type": "switch",
+          "settings": {
+            "image": "shopify://shop_images/71PyMC92UFL.jpg",
+            "title": "Hator Optical V2 Kailh Green Switch",
+            "color": "green-switches"
+          }
+        },
         "switch_adHb8H": {
           "type": "switch",
           "settings": {
@@ -204,6 +220,8 @@
       "block_order": [
         "switch_qexdg8",
         "switch_Lt6Qxn",
+        "switch_DLpnQ8",
+        "switch_GFcihn",
         "switch_adHb8H",
         "switch_aWamNW",
         "switch_rcFJPi",
