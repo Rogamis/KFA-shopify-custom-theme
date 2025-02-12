@@ -1011,6 +1011,7 @@ section.custom-kfa-lab .container {
     background-size: cover;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .check-switch-wrapper {
