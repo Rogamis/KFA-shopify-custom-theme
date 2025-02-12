@@ -100,14 +100,18 @@
         "switch_TdtnA7"
       ],
       "settings": {
-        "heading": "",
         "background_color": "#f4f4f4"
       }
+    },
+    "table_switch_mYRm8W": {
+      "type": "table-switch",
+      "settings": {}
     }
   },
   "order": [
     "standart-hero",
     "main",
-    "switch_filters_KV8VDW"
+    "switch_filters_KV8VDW",
+    "table_switch_mYRm8W"
   ]
 }
