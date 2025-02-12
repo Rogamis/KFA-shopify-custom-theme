@@ -8,13 +8,9 @@
   padding: 0px;
 }
 
-.when-selected-all H2 {
-    font-size: 26px;
-    padding-top: 30px;
-}
 
 .when-selected-all H2 {
-    font-size: 26px;
+    font-size: 26px !important;
     padding-top: 30px;
 }
 
