@@ -8,6 +8,11 @@
   padding: 0px;
 }
 
+.when-selected-all H2 {
+    font-size: 26px;
+    padding-top: 30px;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
