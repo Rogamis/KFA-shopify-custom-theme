@@ -96,6 +96,22 @@
             "color": "blue-switches"
           }
         },
+        "switch_qDyAAY": {
+          "type": "switch",
+          "settings": {
+            "image": "shopify://shop_images/51IOvr4ETBL._AC_UF1000_1000_QL80.jpg",
+            "title": "outemu Blue Switch",
+            "color": "blue-switches"
+          }
+        },
+        "switch_hEUVUy": {
+          "type": "switch",
+          "settings": {
+            "image": "shopify://shop_images/51IOvr4ETBL._AC_UF1000_1000_QL80.jpg",
+            "title": "outemu Blue Switch",
+            "color": "blue-switches"
+          }
+        },
         "switch_8igW4U": {
           "type": "switch",
           "settings": {
@@ -112,6 +128,22 @@
             "color": "green-switches"
           }
         },
+        "switch_AARwRx": {
+          "type": "switch",
+          "settings": {
+            "image": "shopify://shop_images/71PyMC92UFL.jpg",
+            "title": "Razer Mechanical Switches",
+            "color": "green-switches"
+          }
+        },
+        "switch_ExGD76": {
+          "type": "switch",
+          "settings": {
+            "image": "shopify://shop_images/71PyMC92UFL.jpg",
+            "title": "Razer Mechanical Switches",
+            "color": "green-switches"
+          }
+        },
         "switch_m9XnVN": {
           "type": "switch",
           "settings": {
@@ -120,7 +152,39 @@
             "color": "yellow-switches"
           }
         },
+        "switch_Lp9gEB": {
+          "type": "switch",
+          "settings": {
+            "image": "shopify://shop_images/61uiElalfEL.jpg",
+            "title": "GATERON Milky Yellow Pro",
+            "color": "yellow-switches"
+          }
+        },
+        "switch_e79UCn": {
+          "type": "switch",
+          "settings": {
+            "image": "shopify://shop_images/61uiElalfEL.jpg",
+            "title": "GATERON Milky Yellow Pro",
+            "color": "yellow-switches"
+          }
+        },
         "switch_Eh7Jmk": {
+          "type": "switch",
+          "settings": {
+            "image": "shopify://shop_images/61DFZuChTLL._AC_UF894_1000_QL80.jpg",
+            "title": "Akko V3 Lavender Purple Pro",
+            "color": "purple-switches"
+          }
+        },
+        "switch_T6m6Jr": {
+          "type": "switch",
+          "settings": {
+            "image": "shopify://shop_images/61DFZuChTLL._AC_UF894_1000_QL80.jpg",
+            "title": "Akko V3 Lavender Purple Pro",
+            "color": "purple-switches"
+          }
+        },
+        "switch_6xzzzT": {
           "type": "switch",
           "settings": {
             "image": "shopify://shop_images/61DFZuChTLL._AC_UF894_1000_QL80.jpg",
@@ -139,10 +203,18 @@
         "switch_4iD6zd",
         "switch_TdtnA7",
         "switch_rifdWM",
+        "switch_qDyAAY",
+        "switch_hEUVUy",
         "switch_8igW4U",
         "switch_QkzTeh",
+        "switch_AARwRx",
+        "switch_ExGD76",
         "switch_m9XnVN",
-        "switch_Eh7Jmk"
+        "switch_Lp9gEB",
+        "switch_e79UCn",
+        "switch_Eh7Jmk",
+        "switch_T6m6Jr",
+        "switch_6xzzzT"
       ],
       "settings": {
         "background_color": "#f4f4f4"
