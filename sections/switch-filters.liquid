@@ -187,6 +187,21 @@
                       </div>
                   </div>
                 </div>
+                <p class='when-selected-all'>
+                  <strong>Mechanical Keyboard Switches Overview</strong>  
+
+                  Mechanical keyboard switches are the core components that determine the feel, sound, and responsiveness of each keystroke. Unlike membrane keyboards, mechanical switches use individual mechanisms for each key, providing better durability and a more satisfying typing experience.  
+                  
+                  There are three main types of mechanical switches:  
+                  
+                  - Clicky – Produces a tactile bump with an audible click. Ideal for typists who enjoy feedback.  
+                  - Tactile – Offers a noticeable bump without the loud click, making them great for both typing and gaming.  
+                  - Linear – Smooth and quiet with no tactile bump, providing fast actuation, preferred by gamers.  
+                  
+                  Switches also come in various colors, each indicating different characteristics such as actuation force, noise level, and responsiveness. Popular brands include **Cherry MX, Gateron, Kailh, and Akko**, with colors like **Blue, Red, Brown, Black, Silver, and more**.  
+                  
+                  Choosing the right switch depends on personal preference, whether for gaming, office work, or general use. 🚀
+                </p>
             </div>
     </div>
     </div>
@@ -199,13 +214,16 @@
             var switchItems = document.querySelectorAll('.left-side-items .item');
             var hoverBlocks = document.querySelectorAll('.content-hover-blocks .item');
             var tableSwitches = document.querySelector('.table-switches');
+            var descriptionText = document.querySelector('.when-selected-all');
 
             if (selectedColor === 'all') {
                 document.querySelector('.content-hover-blocks').style.display = 'none';
                 switchItems.forEach(item => item.style.display = 'flex'); 
                 hoverBlocks.forEach(item => item.style.display = 'none');
+                descriptionText.style.display = 'block'; // Показываем описание
             } else {
                 document.querySelector('.content-hover-blocks').style.display = 'block';
+                descriptionText.style.display = 'none'; // Скрываем описание
                 
                 switchItems.forEach(item => {
                     if (item.classList.contains(selectedColor)) {
