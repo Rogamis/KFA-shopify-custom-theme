@@ -111,6 +111,22 @@
             "title": "Razer Mechanical Switches",
             "color": "green-switches"
           }
+        },
+        "switch_m9XnVN": {
+          "type": "switch",
+          "settings": {
+            "image": "shopify://shop_images/61uiElalfEL.jpg",
+            "title": "GATERON Milky Yellow Pro",
+            "color": "yellow-switches"
+          }
+        },
+        "switch_Eh7Jmk": {
+          "type": "switch",
+          "settings": {
+            "image": "shopify://shop_images/61DFZuChTLL._AC_UF894_1000_QL80.jpg",
+            "title": "Akko V3 Lavender Purple Pro",
+            "color": "purple-switches"
+          }
         }
       },
       "block_order": [
@@ -124,7 +140,9 @@
         "switch_TdtnA7",
         "switch_rifdWM",
         "switch_8igW4U",
-        "switch_QkzTeh"
+        "switch_QkzTeh",
+        "switch_m9XnVN",
+        "switch_Eh7Jmk"
       ],
       "settings": {
         "background_color": "#f4f4f4"
