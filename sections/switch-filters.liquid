@@ -201,15 +201,12 @@
             var tableSwitches = document.querySelector('.table-switches');
 
             if (selectedColor === 'all') {
-                tableSwitches.style.display = 'flex'; // Показываем таблицу
                 document.querySelector('.content-hover-blocks').style.display = 'none';
-
                 switchItems.forEach(item => item.style.display = 'flex'); // Показываем все свитчи
                 hoverBlocks.forEach(item => item.style.display = 'none'); // Скрываем описания
             } else {
-                tableSwitches.style.display = 'none'; // Прячем таблицу
                 document.querySelector('.content-hover-blocks').style.display = 'block';
-
+                
                 switchItems.forEach(item => {
                     if (item.classList.contains(selectedColor)) {
                         item.style.display = 'flex';
@@ -217,7 +214,7 @@
                         item.style.display = 'none';
                     }
                 });
-
+                
                 hoverBlocks.forEach(item => {
                     if (item.classList.contains(selectedColor)) {
                         item.style.display = 'block';
